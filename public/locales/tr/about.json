@@ -10,6 +10,12 @@
     "part3": "olmaya odaklanıyoruz"
   },
   "description": "Güvenilir BT altyapı yönetimi ortağınız",
+  "tabs": {
+    "overview": "Genel Bakış",
+    "team": "Ekip",
+    "timeline": "Zaman Çizelgesi",
+    "success": "Başarılar"
+  },
   "stats": {
     "faster": "Daha Hızlı Tedarik",
     "compliance": "Mevzuat Uyumluluğu",

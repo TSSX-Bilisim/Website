@@ -10,6 +10,12 @@
         "part3": "in IT infrastructure management"
     },
     "description": "Your trusted partner in IT infrastructure management",
+    "tabs": {
+        "overview": "Overview",
+        "team": "Team",
+        "timeline": "Timeline",
+        "success": "Success Stories"
+    },
     "stats": {
         "faster": "Faster Provisioning",
         "compliance": "Regulatory Compliance",

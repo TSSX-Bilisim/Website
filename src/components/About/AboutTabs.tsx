@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useDeviceType } from '@/lib';
 
 interface AboutTabsProps {
@@ -7,12 +8,12 @@ interface AboutTabsProps {
 }
 
 const AboutTabs = ({ onNavigate, className }: AboutTabsProps) => {
+  const { t } = useTranslation('about');
   const tabs = useMemo(() => ([
-    { key: 'overview', label: 'Genel Bakış', target: 'overview' },
-    { key: 'team', label: 'Ekip', target: 'team' },
-    { key: 'timeline', label: 'Zaman Çizelgesi', target: 'timeline' },
-    { key: 'success', label: 'Başarılar', target: 'success' }
-  ]), []);
+    { key: 'overview', label: t('tabs.overview'), target: 'overview' },
+    { key: 'timeline', label: t('tabs.timeline'), target: 'timeline' },
+    { key: 'success', label: t('tabs.success'), target: 'success' }
+  ]), [t]);
 
   const [visible, setVisible] = useState<string>('overview');
   const [open, setOpen] = useState(false);
@@ -21,11 +22,30 @@ const AboutTabs = ({ onNavigate, className }: AboutTabsProps) => {
   const headerElRef = useRef<HTMLElement | null>(null);
   const device = useDeviceType();
 
+  const navRef = useRef<HTMLElement | null>(null);
+
   useEffect(() => {
     headerElRef.current = document.querySelector('.app-header');
-    const headerHeight = headerElRef.current ? headerElRef.current.getBoundingClientRect().height : 0;
-    setOffsetTop(headerHeight);
+    const initialHeaderHeight = headerElRef.current ? headerElRef.current.getBoundingClientRect().height : 0;
+    setOffsetTop(initialHeaderHeight);
     let lastY = window.scrollY;
+
+    const calcActive = () => {
+      const headerHeight = headerElRef.current ? headerElRef.current.getBoundingClientRect().height : 0;
+      const navHeight = navRef.current ? navRef.current.getBoundingClientRect().height : 0;
+      const anchor = window.scrollY + headerHeight + navHeight + 4; // a small buffer
+      let current = tabs[0].target;
+      for (const tab of tabs) {
+        const el = document.getElementById(tab.target);
+        if (!el) continue;
+        if (anchor >= el.offsetTop) {
+          current = tab.target;
+        } else {
+          break;
+        }
+      }
+      setVisible(prev => (prev === current ? prev : current));
+    };
 
     const onScroll = () => {
       const y = window.scrollY;
@@ -34,27 +54,17 @@ const AboutTabs = ({ onNavigate, className }: AboutTabsProps) => {
       if (goingDown) {
         setOffsetTop(0);
       } else {
-        const h = headerElRef.current ? headerElRef.current.getBoundingClientRect().height : headerHeight;
+        const h = headerElRef.current ? headerElRef.current.getBoundingClientRect().height : initialHeaderHeight;
         setOffsetTop(h);
       }
       lastY = y;
+      calcActive();
     };
 
     window.addEventListener('scroll', onScroll, { passive: true });
+    // initial calculation
+    calcActive();
     return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) setVisible(entry.target.id);
-      });
-    }, { rootMargin: '-40% 0px -55% 0px', threshold: [0, 0.25, 0.5, 1] });
-    tabs.forEach(t => {
-      const el = document.getElementById(t.target);
-      if (el) observer.observe(el);
-    });
-    return () => observer.disconnect();
   }, [tabs]);
 
   const handleNav = (target: string) => {
@@ -64,8 +74,9 @@ const AboutTabs = ({ onNavigate, className }: AboutTabsProps) => {
 
   return (
     <nav
+  ref={navRef}
       id="about-tabs"
-      aria-label="Hakkımızda sekmeleri"
+      aria-label={t('label') + ' tabs'}
       style={{ top: offsetTop }}
       className={
         'w-full bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80 sticky z-40 transition-shadow ' +
