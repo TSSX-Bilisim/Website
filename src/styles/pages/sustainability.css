@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@layer components {
+    #sustainability-header {
+        @apply bg-gradient-to-br from-neutral-900 via-neutral-800 to-amber-900 text-white;
+    }
+}

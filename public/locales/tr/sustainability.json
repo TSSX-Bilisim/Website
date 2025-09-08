@@ -1,5 +1,11 @@
 {
-  "title": "Sürdürülebilirlik",
+  "label": "Sürdürülebilirlik",
+  "title": {
+    "part1": "Çevresel, sosyal ve ekonomik sorumluluğumuzla",
+    "part2": "sürdürülebilir bir gelecek",
+    "part3": "inşa ediyoruz"
+  },
+  "description": "Stratejilerimiz hem şirketimizin hem de toplumun faydasını gözetir",
   "meta": {
     "title": "TSSX | Sürdürülebilirlik",
     "description": "TSSX olarak çevresel, sosyal ve ekonomik sorumluluklarımızı yerine getirmek için sürdürülebilirlik vizyonumuzu hayata geçiriyoruz.",
@@ -9,44 +15,137 @@
     "header": "Sürdürülebilirlik",
     "intro": "TSSX, çevresel, sosyal ve ekonomik alanlarda sürdürülebilir bir gelecek için sorumluluk üstlenmektedir. Bu vizyon doğrultusunda geliştirdiğimiz stratejiler, hem şirketimizin hem de toplumun faydasını gözetmektedir.",
     "sections": {
+      "introduction": {
+        "title": "Giriş ve Özet",
+        "description": "Bu doküman, TSSX Bilişim ve Danışmanlık Anonim Şirketi'nin sürdürülebilirlik çabalarını ve taahhütlerini açıklamaktadır. Şirket, çevresel, sosyal ve ekonomik sorumluluklarını yerine getirme amacıyla bir dizi strateji ve politika benimsemektedir.",
+        "pillars": {
+          "environmental": "Çevresel Sorumluluklar",
+          "social": "Sosyal Sorumluluklar", 
+          "economic": "Ekonomik Sürdürülebilirlik"
+        }
+      },
       "policy": {
         "title": "Sürdürülebilirlik Politikamız",
         "environmental": {
           "title": "Çevresel Sorumluluk",
           "items": [
-            "Enerji verimliliğini artırmak",
-            "Atık azaltma ve geri dönüşüm stratejilerini uygulamak",
-            "Karbon ayak izimizi belirleyip azaltmak"
+            "Çalışma ortamlarında enerji verimliliğini yükseltmek",
+            "Atık azaltma ve yeniden kullanım stratejilerini uygulamak",
+            "Karbon ayak izini belirlemek ve azaltmak",
+            "Sürdürülebilir ulaşım politikalarını teşvik etmek"
           ]
         },
         "social": {
           "title": "Sosyal Sorumluluk",
           "items": [
-            "Çalışan hakları ve refahını korumak",
-            "Yerel topluluk projelerine katkı sağlamak",
-            "Çeşitlilik ve kapsayıcılığı teşvik etmek"
+            "Adil ücret politikaları ve çalışan refahını artırmak",
+            "Çalışanlara eğitim ve gelişim fırsatları sunmak",
+            "Yerel topluluk projelerine aktif katılım",
+            "Çeşitlilik ve kapsayıcılık programlarını teşvik etmek"
           ]
         },
         "economic": {
           "title": "Ekonomik Sürdürülebilirlik",
           "items": [
             "Adil ticaret ilkelerini desteklemek",
-            "Uzun vadeli finansal istikrar sağlamak",
-            "Sürdürülebilir yatırım stratejileri geliştirmek"
+            "Uzun vadeli finansal stratejiler geliştirmek",
+            "Sürdürülebilir yatırım ve büyüme stratejileri"
           ]
         }
       },
-      "future": {
-        "title": "Gelecek Hedeflerimiz",
+      "environmental": {
+        "title": "Çevresel Sürdürülebilirlik",
+        "energy": {
+          "title": "Enerji Verimliliği ve Yenilenebilir Enerji",
+          "items": [
+            "Çalışma ortamlarında enerji denetimleri düzenlemek"
+          ]
+        },
+        "waste": {
+          "title": "Atık Yönetimi ve Geri Dönüşüm",
+          "items": [
+            "Atık azaltma stratejileri uygulamak",
+            "Tüm çalışma ortamlarında geri dönüşüm programlarını genişletmek"
+          ]
+        },
+        "carbon": {
+          "title": "Karbonsuzlaştırma ve Ulaşım",
+          "items": [
+            "Karbon salınımını izlemek ve azaltmak",
+            "Sürdürülebilir ulaşım alternatiflerini teşvik etmek"
+          ]
+        }
+      },
+      "social": {
+        "title": "Sosyal Sorumluluk",
+        "employee": {
+          "title": "Çalışan Hakları ve Refah",
+          "items": [
+            "Adil ücret politikalarını güçlendirmek",
+            "Çalışanların sağlık ve refahını destekleyen programlar"
+          ]
+        },
+        "community": {
+          "title": "Toplumsal Katılım ve Gönüllülük",
+          "items": [
+            "Yerel topluluk projelerine finansal destek sağlamak",
+            "Çalışanları gönüllülük faaliyetlerine teşvik etmek"
+          ]
+        },
+        "diversity": {
+          "title": "Çeşitlilik ve Kapsayıcılık",
+          "items": [
+            "Çeşitlilik ve kapsayıcılık eğitimleri düzenlemek",
+            "Farklı bakış açılarını ve yetenekleri değerlendirmek"
+          ]
+        }
+      },
+      "economic": {
+        "title": "Ekonomik Sürdürülebilirlik",
+        "ethics": {
+          "title": "Etik İş Uygulamaları ve Tedarik Zinciri",
+          "items": [
+            "Adil ticaret ilkesine uymayan tedarikçilerle işbirliği sonlandırmak"
+          ]
+        },
+        "stability": {
+          "title": "Mali İstikrar ve Sürdürülebilir Yatırımlar",
+          "items": [
+            "Uzun vadeli mali stratejiler geliştirmek",
+            "Sürdürülebilirlik odaklı yatırım fırsatlarını değerlendirmek"
+          ]
+        }
+      },
+      "performance": {
+        "title": "Performans Ölçümü ve Raporlama",
         "items": [
-          "Karbon ayak izimizi daha da azaltmak",
-          "Sosyal projelere yatırım artırmak",
-          "Toplumda sürdürülebilirlik farkındalığını güçlendirmek"
+          "Yıllık sürdürülebilirlik raporları ve performans göstergeleri",
+          "İlgili paydaşlara düzenli güncellemeler sağlamak"
         ]
+      },
+      "future": {
+        "title": "Gelecek Hedefleri",
+        "performance": {
+          "title": "Sürdürülebilirlik Performansının İyileştirilmesi",
+          "items": [
+            "Karbon ayak izini daha da azaltmak"
+          ]
+        },
+        "impact": {
+          "title": "Toplumsal ve Çevresel Etkinin Artırılması",
+          "items": [
+            "Sosyal projelere ve yerel topluluklara daha fazla yatırım",
+            "Sürdürülebilirlik konusundaki farkındalığı artırmak için iletişim çabalarını güçlendirmek"
+          ]
+        }
       },
       "contact": {
         "title": "İletişim ve İş Birliği",
-        "description": "Sürdürülebilirlik yolculuğumuzda paydaşlarımızla güçlü iletişim ve ortak projeler geliştiriyoruz."
+        "description": "Sürdürülebilirlik yolculuğumuzda paydaşlarımızla güçlü iletişim ve ortak projeler geliştiriyoruz.",
+        "items": [
+          "Paydaşlarla düzenli iletişim stratejileri",
+          "Sürdürülebilirlikle ilgili işbirliği ve ortak projeler"
+        ]
       }
     }
   }

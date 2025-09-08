@@ -1,5 +1,11 @@
 export { default as Meta } from "./Meta";
 export { default as PageHeader } from "./PageHeader";
+export { default as IntroductionSection } from "./IntroductionSection";
+export { default as SustainabilityTabs } from "./SustainabilityTabs";
 export { default as PolicySection } from "./PolicySection";
+export { default as DetailedEnvironmentalSection } from "./DetailedEnvironmentalSection";
+export { default as DetailedSocialSection } from "./DetailedSocialSection";
+export { default as DetailedEconomicSection } from "./DetailedEconomicSection";
+export { default as PerformanceReporting } from "./PerformanceReporting";
 export { default as FutureGoals } from "./FutureGoals";
 export { default as CollaborationSection } from "./CollaborationSection";

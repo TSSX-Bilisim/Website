@@ -1,5 +1,11 @@
 {
-  "title": "Sustainability",
+  "label": "Sustainability",
+  "title": {
+    "part1": "Building a",
+    "part2": "sustainable future",
+    "part3": "with environmental, social and economic responsibility"
+  },
+  "description": "Our strategies benefit both our company and society as a whole",
   "meta": {
     "title": "TSSX | Sustainability",
     "description": "At TSSX, we embrace our environmental, social, and economic responsibilities through our sustainability vision and strategies.",
@@ -9,44 +15,137 @@
     "header": "Sustainability",
     "intro": "TSSX is committed to building a sustainable future by taking responsibility in environmental, social, and economic domains. Our strategies aim to benefit both our company and society.",
     "sections": {
+      "introduction": {
+        "title": "Introduction and Overview",
+        "description": "This document outlines TSSX Information Technologies and Consulting Inc.'s sustainability efforts and commitments. The company adopts a range of strategies and policies to fulfill its environmental, social, and economic responsibilities.",
+        "pillars": {
+          "environmental": "Environmental Responsibilities",
+          "social": "Social Responsibilities", 
+          "economic": "Economic Sustainability"
+        }
+      },
       "policy": {
         "title": "Our Sustainability Policy",
         "environmental": {
           "title": "Environmental Responsibility",
           "items": [
-            "Increase energy efficiency",
-            "Implement waste reduction and recycling strategies",
-            "Measure and reduce our carbon footprint"
+            "Enhance energy efficiency in workspaces",
+            "Implement waste reduction and reuse strategies",
+            "Determine and reduce carbon footprint",
+            "Promote sustainable transportation policies"
           ]
         },
         "social": {
           "title": "Social Responsibility",
           "items": [
-            "Protect employee rights and well-being",
-            "Contribute to local community projects",
-            "Promote diversity and inclusion"
+            "Fair wage policies and employee welfare enhancement",
+            "Provide education and development opportunities for employees",
+            "Active participation in local community projects",
+            "Promote diversity and inclusion programs"
           ]
         },
         "economic": {
           "title": "Economic Sustainability",
           "items": [
             "Support fair trade principles",
-            "Ensure long-term financial stability",
-            "Develop sustainable investment strategies"
+            "Develop long-term financial strategies",
+            "Sustainable investment and growth strategies"
           ]
         }
       },
-      "future": {
-        "title": "Our Future Goals",
+      "environmental": {
+        "title": "Environmental Sustainability",
+        "energy": {
+          "title": "Energy Efficiency and Renewable Energy",
+          "items": [
+            "Conduct energy audits in workspaces"
+          ]
+        },
+        "waste": {
+          "title": "Waste Management and Recycling",
+          "items": [
+            "Apply waste reduction strategies",
+            "Expand recycling programs in all work environments"
+          ]
+        },
+        "carbon": {
+          "title": "Carbon Reduction and Transportation",
+          "items": [
+            "Monitor and reduce carbon emissions",
+            "Promote sustainable transportation alternatives"
+          ]
+        }
+      },
+      "social": {
+        "title": "Social Responsibility",
+        "employee": {
+          "title": "Employee Rights and Welfare",
+          "items": [
+            "Strengthen fair wage policies",
+            "Programs supporting employee health and welfare"
+          ]
+        },
+        "community": {
+          "title": "Community Engagement and Volunteering",
+          "items": [
+            "Provide financial support to local community projects",
+            "Encourage employees in volunteering activities"
+          ]
+        },
+        "diversity": {
+          "title": "Diversity and Inclusion",
+          "items": [
+            "Organize diversity and inclusion training",
+            "Value different perspectives and talents"
+          ]
+        }
+      },
+      "economic": {
+        "title": "Economic Sustainability",
+        "ethics": {
+          "title": "Ethical Business Practices and Supply Chain",
+          "items": [
+            "End cooperation with suppliers not adhering to fair trade principles"
+          ]
+        },
+        "stability": {
+          "title": "Financial Stability and Sustainable Investments",
+          "items": [
+            "Develop long-term financial strategies",
+            "Evaluate sustainability-focused investment opportunities"
+          ]
+        }
+      },
+      "performance": {
+        "title": "Performance Measurement and Reporting",
         "items": [
-          "Further reduce our carbon footprint",
-          "Increase investments in social projects",
-          "Raise awareness of sustainability in society"
+          "Annual sustainability reports and performance indicators",
+          "Provide regular updates to relevant stakeholders"
         ]
       },
+      "future": {
+        "title": "Future Goals",
+        "performance": {
+          "title": "Improving Sustainability Performance",
+          "items": [
+            "Further reduce carbon footprint"
+          ]
+        },
+        "impact": {
+          "title": "Increasing Social and Environmental Impact",
+          "items": [
+            "More investment in social projects and local communities",
+            "Strengthen communication efforts to increase awareness about sustainability"
+          ]
+        }
+      },
       "contact": {
-        "title": "Contact & Collaboration",
-        "description": "We collaborate with our stakeholders through transparent communication and joint sustainability projects."
+        "title": "Communication & Collaboration",
+        "description": "We collaborate with our stakeholders through transparent communication and joint sustainability projects.",
+        "items": [
+          "Regular communication strategies with stakeholders",
+          "Sustainability-related collaborations and joint projects"
+        ]
       }
     }
   }

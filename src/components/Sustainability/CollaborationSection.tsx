@@ -18,35 +18,22 @@ const CollaborationSection = () => {
                                     {t("page.sections.contact.title")}
                                 </h2>
                             </div>
-                            <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
+                            <p className="text-lg text-neutral-600 max-w-2xl mx-auto break-keep">
                                 {t("page.sections.contact.description")}
                             </p>
                         </div>
                         
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div className="flex items-start gap-4 p-6 bg-white rounded-lg border border-amber-100">
-                                <div className="p-3 bg-blue-100 rounded-full">
-                                    <MessageSquare className="w-5 h-5 text-blue-600" />
+                            {(t("page.sections.contact.items", { returnObjects: true }) as string[]).map((item, index) => (
+                                <div key={index} className="flex items-start gap-4 p-6 bg-white rounded-lg border border-amber-100">
+                                    <div className="p-3 bg-amber-100 rounded-full">
+                                        {index === 0 ? <MessageSquare className="w-5 h-5 text-amber-600" /> : <Users className="w-5 h-5 text-amber-600" />}
+                                    </div>
+                                    <div>
+                                        <p className="text-neutral-700 break-keep">{item}</p>
+                                    </div>
                                 </div>
-                                <div>
-                                    <h3 className="font-semibold text-neutral-800 mb-2">Şeffaf İletişim</h3>
-                                    <p className="text-neutral-600 text-sm">
-                                        Sürdürülebilirlik hedeflerimiz ve ilerlemelerimiz hakkında düzenli raporlama
-                                    </p>
-                                </div>
-                            </div>
-                            
-                            <div className="flex items-start gap-4 p-6 bg-white rounded-lg border border-amber-100">
-                                <div className="p-3 bg-green-100 rounded-full">
-                                    <Users className="w-5 h-5 text-green-600" />
-                                </div>
-                                <div>
-                                    <h3 className="font-semibold text-neutral-800 mb-2">Ortak Projeler</h3>
-                                    <p className="text-neutral-600 text-sm">
-                                        Paydaşlarımızla birlikte sürdürülebilirlik projelerinde aktif işbirliği
-                                    </p>
-                                </div>
-                            </div>
+                            ))}
                         </div>
                     </div>
                 </div>

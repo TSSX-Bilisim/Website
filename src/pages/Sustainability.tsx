@@ -1,6 +1,11 @@
 import LoadingPage from "@/components/ui/LoadingPage";
 import { Suspense } from "react";
-import { Meta, PageHeader, PolicySection, FutureGoals, CollaborationSection } from "@/components/Sustainability";
+import { 
+  Meta, 
+  PageHeader, 
+  IntroductionSection,
+  SustainabilityTabs
+} from "@/components/Sustainability";
 import { ContactBanner } from "@/components/Shared";
 
 const SustainabilityPage = () => {
@@ -10,9 +15,8 @@ const SustainabilityPage = () => {
       <main className="app-content">
         <Suspense fallback={<LoadingPage />}>
           <PageHeader />
-          <PolicySection />
-          <FutureGoals />
-          <CollaborationSection />
+          <IntroductionSection />
+          <SustainabilityTabs />
           <ContactBanner />
         </Suspense>
       </main>
