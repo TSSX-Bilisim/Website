@@ -47,8 +47,8 @@ const SustainabilityPage = () => {
       <main className="app-content">
         <Suspense fallback={<LoadingPage />}>
           <PageHeader />
-          <SustainabilityTabs value={activeTab} onChange={setActiveTab} className="-mt-4" />
-          <section className="mt-10 space-y-20" aria-live="polite">
+          <SustainabilityTabs value={activeTab} onChange={setActiveTab} />
+          <section className="section-content">
             {renderContent()}
           </section>
           <ContactBanner />
