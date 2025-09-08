@@ -14,6 +14,12 @@
   "page": {
     "header": "Sustainability",
     "intro": "TSSX is committed to building a sustainable future by taking responsibility in environmental, social, and economic domains. Our strategies aim to benefit both our company and society.",
+    "tabs": {
+  "overview": "Vision & Strategy",
+  "pillars": "Focus Areas",
+  "progress": "Performance & Goals",
+  "commitment": "Commitment & Collaboration"
+    },
     "sections": {
       "introduction": {
         "title": "Introduction and Overview",
@@ -118,10 +124,40 @@
       },
       "performance": {
         "title": "Performance Measurement and Reporting",
+        "description": "We monitor sustainability performance through quantitative and qualitative indicators, disclose transparently, and embed results into a continuous improvement loop.",
         "items": [
-          "Annual sustainability reports and performance indicators",
-          "Provide regular updates to relevant stakeholders"
-        ]
+          "Publication of annual and quarterly sustainability (ESG) reports",
+          "Baseline and target year definitions to track progress",
+          "Periodic (quarterly / annual) stakeholder updates"
+        ],
+        "kpis": {
+          "title": "Key Tracked KPIs (Examples)",
+          "items": [
+            "Energy consumption (kWh / employee)",
+            "Carbon emissions (tCO₂e / year)",
+            "Recycled waste ratio (%)",
+            "Female employee ratio (%)",
+            "Training hours (per capita / year)",
+            "Volunteer participation rate (%)"
+          ]
+        },
+        "process": {
+          "title": "Process & Methodology",
+          "items": [
+            "Data collection: operational systems, HR records, supplier disclosures",
+            "Validation: internal control + external assurance when needed",
+            "Benchmarking: sector averages & prior-year results",
+            "Improvement cycle: Measure - Analyze - Act - Review"
+          ]
+        },
+        "assurance": {
+          "title": "Assurance & Improvement",
+          "items": [
+            "Annual management review for critical KPI set",
+            "Risk & opportunity assessment feeding target updates",
+            "Transparency via publication of methodology notes"
+          ]
+        }
       },
       "future": {
         "title": "Future Goals",
@@ -146,6 +182,10 @@
           "Regular communication strategies with stakeholders",
           "Sustainability-related collaborations and joint projects"
         ]
+      },
+      "conclusion": {
+        "title": "Conclusion & Commitment",
+        "text": "This document details TSSX Information Technologies and Consulting Inc.'s sustainability efforts and states its commitments toward a sustainable future. The policies we implement to reduce environmental impact, amplify social value, and strengthen long-term economic resilience are grounded in transparency, ethics, and continuous improvement. Together with our stakeholders, we aim for measurable, traceable, and optimizable sustainability performance."
       }
     }
   }

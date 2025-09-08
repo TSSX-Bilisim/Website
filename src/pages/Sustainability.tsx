@@ -32,25 +32,23 @@ const SustainabilityPage = () => {
         <Suspense fallback={<LoadingPage />}>
           <PageHeader />
           <SustainabilityTabs value="overview" onChange={handleTabNavigate} />
+          {/* Overview: intro policy + collaboration */}
           <section id="overview" className="section-content space-y-24">
             <PolicySection />
             <CollaborationSection />
           </section>
-          <section id="environmental" className="section-content">
-            <DetailedEnvironmentalSection />
+          {/* Pillars: wrap environmental/social/economic */}
+          <section id="pillars" className="section-content space-y-32">
+            <div id="environmental"><DetailedEnvironmentalSection /></div>
+            <div id="social"><DetailedSocialSection /></div>
+            <div id="economic"><DetailedEconomicSection /></div>
           </section>
-          <section id="social" className="section-content">
-            <DetailedSocialSection />
+          {/* Progress: future goals + reporting */}
+          <section id="progress" className="section-content space-y-32">
+            <div id="reporting"><PerformanceReporting /></div>
+            <div id="future"><FutureGoals /></div>
           </section>
-          <section id="economic" className="section-content">
-            <DetailedEconomicSection />
-          </section>
-          <section id="future" className="section-content">
-            <FutureGoals />
-          </section>
-          <section id="reporting" className="section-content">
-            <PerformanceReporting />
-          </section>
+          {/* Commitment: contact + conclusion already appended inside reporting previously */}
           <ContactBanner />
         </Suspense>
       </main>

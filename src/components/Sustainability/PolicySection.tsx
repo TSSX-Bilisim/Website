@@ -5,8 +5,7 @@ const PolicySection = () => {
     const { t } = useTranslation('sustainability');
     
     return (
-        <section id="sustainability-policy">
-            <div className="section-content">
+            <>
                 <div className="section-header">
                     <h2 className="text-3xl md:text-4xl font-bold text-neutral-800 text-center">
                         {t("page.sections.policy.title")}
@@ -74,8 +73,7 @@ const PolicySection = () => {
                         </ul>
                     </div>
                 </div>
-            </div>
-        </section>
+            </>
     );
 };
 

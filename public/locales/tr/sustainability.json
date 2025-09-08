@@ -14,6 +14,12 @@
   "page": {
     "header": "Sürdürülebilirlik",
     "intro": "TSSX, çevresel, sosyal ve ekonomik alanlarda sürdürülebilir bir gelecek için sorumluluk üstlenmektedir. Bu vizyon doğrultusunda geliştirdiğimiz stratejiler, hem şirketimizin hem de toplumun faydasını gözetmektedir.",
+    "tabs": {
+  "overview": "Vizyon & Strateji",
+  "pillars": "Odak Alanları",
+  "progress": "Performans & Hedefler",
+  "commitment": "Taahhüt & İş Birliği"
+    },
     "sections": {
       "introduction": {
         "title": "Giriş ve Özet",
@@ -118,10 +124,40 @@
       },
       "performance": {
         "title": "Performans Ölçümü ve Raporlama",
+        "description": "Sürdürülebilirlik performansımızı nicel ve nitel göstergelerle izler, şeffaf biçimde paylaşır ve sürekli iyileştirme döngüsüne dahil ederiz.",
         "items": [
-          "Yıllık sürdürülebilirlik raporları ve performans göstergeleri",
-          "İlgili paydaşlara düzenli güncellemeler sağlamak"
-        ]
+          "Yıllık ve çeyreklik sürdürülebilirlik (ESG) raporlarının yayınlanması",
+          "İlerlemeyi takip etmek için baz yıl ve hedef yıl tanımları",
+          "Paydaşlara periyodik (çeyreklik / yıllık) durum güncellemeleri"
+        ],
+        "kpis": {
+          "title": "Ölçülen Ana Göstergeler (Örnek)",
+          "items": [
+            "Enerji tüketimi (kWh / çalışan)",
+            "Karbon emisyonu (tCO₂e / yıl)",
+            "Geri dönüştürülen atık oranı (%)",
+            "Kadın çalışan oranı (%)",
+            "Eğitim saati (kişi başı / yıl)",
+            "Gönüllülük katılım oranı (%)"
+          ]
+        },
+        "process": {
+          "title": "Süreç ve Yöntem",
+          "items": [
+            "Veri toplama: Operasyonel sistemler, İK kayıtları, tedarikçi bildirimleri",
+            "Doğrulama: İç kontrol + gerektiğinde harici doğrulama",
+            "Kıyaslama: Sektör ortalamaları ve önceki yıl sonuçları",
+            "İyileştirme döngüsü: Ölç - Analiz - Aksiyon - Gözden Geçir"
+          ]
+        },
+        "assurance": {
+          "title": "Doğrulama ve İyileştirme",
+          "items": [
+            "Kritik KPI seti için yıllık yönetim gözden geçirmesi",
+            "Risk ve fırsat değerlendirmesi ile hedef güncellemeleri",
+            "Şeffaflık ilkesi doğrultusunda metodoloji notlarının paylaşımı"
+          ]
+        }
       },
       "future": {
         "title": "Gelecek Hedefleri",
@@ -146,6 +182,10 @@
           "Paydaşlarla düzenli iletişim stratejileri",
           "Sürdürülebilirlikle ilgili işbirliği ve ortak projeler"
         ]
+      },
+      "conclusion": {
+        "title": "Sonuç ve Taahhüt",
+        "text": "Bu doküman, TSSX Bilişim ve Danışmanlık Anonim Şirketi’nin sürdürülebilirlik çabalarını detaylandırmakta ve şirketin sürdürülebilir bir gelecek için taahhütlerini ortaya koymaktadır. Çevresel etkileri azaltmak, sosyal değeri artırmak ve uzun vadeli ekonomik dayanıklılığı güçlendirmek için uyguladığımız politikalar; şeffaflık, etik ve sürekli iyileştirme prensipleri üzerine kuruludur. Paydaşlarımızla ortak hareket ederek ölçülebilir, izlenebilir ve geliştirilebilir sürdürülebilirlik performansı hedefliyoruz."
       }
     }
   }

@@ -1,5 +1,6 @@
 // Stateless full-width tab bar; content handled by parent page
 import { useState, useEffect, useRef, useMemo } from "react";
+import { useTranslation } from "react-i18next";
 import { useDeviceType } from "@/lib";
 
 interface SustainabilityTabsProps {
@@ -9,22 +10,24 @@ interface SustainabilityTabsProps {
 }
 
 const SustainabilityTabs = ({ value, onChange, className }: SustainabilityTabsProps) => {
+    const { t } = useTranslation('sustainability');
+    // Logical grouping collapsed into 4 composite sections
+    // overview -> existing intro/policy
+    // pillars -> environmental + social + economic
+    // progress -> future + reporting
+    // commitment -> conclusion/contact
     const tabs = useMemo(() => ([
-        { key: 'overview', label: 'Genel Bakış', target: 'overview' },
-        { key: 'environmental', label: 'Çevresel', target: 'environmental' },
-        { key: 'social', label: 'Sosyal', target: 'social' },
-        { key: 'economic', label: 'Ekonomik', target: 'economic' },
-        { key: 'future', label: 'Hedefler', target: 'future' },
-        { key: 'reporting', label: 'Raporlama', target: 'reporting' }
-    ]), []);
+        { key: 'overview', label: t('page.tabs.overview'), target: 'overview' },
+        { key: 'pillars', label: t('page.tabs.pillars'), target: 'pillars' },
+        { key: 'progress', label: t('page.tabs.progress'), target: 'progress' }
+    ]), [t]);
 
-    const [open, setOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const [offsetTop, setOffsetTop] = useState(0);
     const headerElRef = useRef<HTMLElement | null>(null);
     const device = useDeviceType();
-        const [visible, setVisible] = useState<string>(value);
-        const activeTab = tabs.find(t => t.key === visible);
+    const [visible, setVisible] = useState<string>(value);
+    const activeTab = tabs.find(t => t.key === visible);
 
         useEffect(() => {
             const observer = new IntersectionObserver(
@@ -35,10 +38,10 @@ const SustainabilityTabs = ({ value, onChange, className }: SustainabilityTabsPr
                         }
                     });
                 },
-                { rootMargin: '-40% 0px -55% 0px', threshold: [0, 0.25, 0.5, 1] }
+        { rootMargin: '-40% 0px -55% 0px', threshold: [0, 0.25, 0.5, 1] }
             );
-            tabs.forEach(t => {
-                const el = document.getElementById(t.target);
+    tabs.forEach(tab => {
+        const el = document.getElementById(tab.target);
                 if (el) observer.observe(el);
             });
             return () => observer.disconnect();
@@ -68,6 +71,8 @@ const SustainabilityTabs = ({ value, onChange, className }: SustainabilityTabsPr
             return () => window.removeEventListener('scroll', onScroll);
         }, []);
 
+    const [openMobile, setOpenMobile] = useState(false);
+
         return (
             <nav
                 id="sustainability-tabs"
@@ -82,53 +87,53 @@ const SustainabilityTabs = ({ value, onChange, className }: SustainabilityTabsPr
         {/* Mobile Dropdown (shown when device hook says mobile) */}
         {device === 'mobile' && (
             <div className="px-4 py-4">
-                            <button
-                                type="button"
-                                onClick={() => setOpen(o => !o)}
-                                aria-haspopup="listbox"
-                                aria-expanded={open}
-                                aria-controls="sustainability-mobile-tablist"
-                            className="w-full flex items-center justify-between rounded-md border border-neutral-200 bg-white px-4 py-3 text-sm font-medium text-neutral-700 hover:border-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-500/30"
-                            >
-                                <span>{activeTab?.label}</span>
-                                <svg
-                                    className={"w-4 h-4 transition-transform " + (open ? "rotate-180" : "rotate-0")}
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth="2"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 9l6 6 6-6" />
-                                </svg>
-                            </button>
-                            <div
-                                className={
-                                    "overflow-hidden transition-[max-height,opacity] duration-300 " +
-                                    (open ? "max-h-96 opacity-100" : "max-h-0 opacity-0")
-                                }
-                                id="sustainability-mobile-tablist"
-                            >
-                                            <ul
-                                                role="listbox"
-                                                tabIndex={-1}
-                                                className="mt-2 w-full rounded-md border border-neutral-200 bg-white divide-y divide-neutral-200 shadow-sm"
-                                            >
-                                    {tabs.map(tab => {
-                                        const active = tab.target === visible;
-                                        return (
-                                            <li key={tab.key} role="option" aria-selected={active}>
-                                                <button
-                                                    type="button"
-                                                    onClick={() => { onChange(tab.target); setOpen(false); }}
-                                                                className={"w-full text-left px-4 py-3 text-sm transition-colors " + (active ? "text-black font-semibold bg-amber-50 border-l-4 border-amber-500" : "text-neutral-600 hover:text-black hover:bg-neutral-50")}
-                                                >
-                                                    {tab.label}
-                                                </button>
-                                            </li>
-                                        );
-                                    })}
-                                </ul>
-                            </div>
+                <button
+                    type="button"
+                    onClick={() => setOpenMobile(o => !o)}
+                    aria-haspopup="listbox"
+                    aria-expanded={openMobile}
+                    aria-controls="sustainability-mobile-tablist"
+                    className="w-full flex items-center justify-between rounded-md border border-neutral-200 bg-white px-4 py-3 text-sm font-medium text-neutral-700 hover:border-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-500/30"
+                >
+                    <span>{activeTab?.label}</span>
+                    <svg
+                        className={"w-4 h-4 transition-transform " + (openMobile ? "rotate-180" : "rotate-0")}
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        viewBox="0 0 24 24"
+                    >
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M6 9l6 6 6-6" />
+                    </svg>
+                </button>
+                <div
+                    className={
+                        "overflow-hidden transition-[max-height,opacity] duration-300 " +
+                        (openMobile ? "max-h-96 opacity-100" : "max-h-0 opacity-0")
+                    }
+                    id="sustainability-mobile-tablist"
+                >
+                    <ul
+                        role="listbox"
+                        tabIndex={-1}
+                        className="mt-2 w-full rounded-md border border-neutral-200 bg-white divide-y divide-neutral-200 shadow-sm"
+                    >
+                        {tabs.map(tab => {
+                            const active = tab.target === visible;
+                            return (
+                                <li key={tab.key} role="option" aria-selected={active}>
+                                    <button
+                                        type="button"
+                                        onClick={() => { onChange(tab.target); setOpenMobile(false); }}
+                                        className={"w-full text-left px-4 py-3 text-sm transition-colors " + (active ? "text-black font-semibold bg-amber-50 border-l-4 border-amber-500" : "text-neutral-600 hover:text-black hover:bg-neutral-50")}
+                                    >
+                                        {tab.label}
+                                    </button>
+                                </li>
+                            );
+                        })}
+                    </ul>
+                </div>
             </div>
         )}
 
