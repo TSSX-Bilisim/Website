@@ -23,6 +23,7 @@
       "message": "Tell us about your needs",
       "consent": "I agree to be contacted regarding my request."
     },
+    "sending": "Sending...",
     "submit": "Submit Request",
     "successMessage": "Thank you! Our team will contact you within one business day.",
     "errorMessage": "Sorry—we couldn’t deliver your message. Please try again, or email us at info@tss-x.com."

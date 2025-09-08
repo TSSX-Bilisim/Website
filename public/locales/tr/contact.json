@@ -23,6 +23,7 @@
             "message": "İhtiyaçlarınızı anlatın",
             "consent": "Talebimle ilgili olarak benimle iletişime geçilmesini kabul ediyorum."
         },
+        "sending": "Gönderiliyor...",
         "submit": "Talebinizi Gönderin",
         "successMessage": "Bizimle iletişime geçtiğiniz için teşekkürler! Size en kısa sürede geri döneceğiz.",
         "errorMessage": "Üzgünüz, mesajınızı gönderirken bir hata oluştu. Lütfen tekrar deneyin veya doğrudan info@tss-x.com adresine yazın."
