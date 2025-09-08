@@ -13,9 +13,9 @@ const PartnersPage = () => {
   return (
     <>
       <Helmet>
-        <title>{t("title")} | {COMPANY_NAME}</title>
+        <title>{t("label")} | {COMPANY_NAME}</title>
         <meta name="description" content={t("meta_description")} />
-        <meta property="og:title" content={`${t("title")} | ${COMPANY_NAME}`} />
+        <meta property="og:title" content={`${t("label")} | ${COMPANY_NAME}`} />
         <meta property="og:description" content={t("meta_description")} />
       </Helmet>
       <main className="app-content">

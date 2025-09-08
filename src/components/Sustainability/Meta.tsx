@@ -8,21 +8,21 @@ const Meta = () => {
 
   return (
     <Helmet>
-        <title>{t("title")} | {COMPANY_NAME}</title>
+        <title>{t("label")} | {COMPANY_NAME}</title>
         <meta name="description" content={t("meta.description")} />
         <meta name="keywords" content={t("meta.keywords")} />
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://tssx.com/sustainability" />
-        <meta property="og:title" content="TSS-X Sustainability | Environmental & Social Responsibility" />
+        <meta property="og:title" content={t("label")}/>
         <meta property="og:description" content={t("meta.description")} />
         <meta property="og:image" content="https://tssx.com/img/tssx/sustainability-og.png" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="https://tssx.com/sustainability" />
-        <meta name="twitter:title" content="TSS-X Sustainability | Environmental & Social Responsibility" />
+        <meta name="twitter:title" content={t("label")} />
         <meta name="twitter:description" content={t("meta.description")} />
         <meta name="twitter:image" content="https://tssx.com/img/tssx/sustainability-og.png" />
 
