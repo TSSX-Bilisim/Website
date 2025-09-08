@@ -5,8 +5,7 @@ const DetailedEnvironmentalSection = () => {
     const { t } = useTranslation('sustainability');
     
     return (
-        <section id="detailed-environmental">
-            <div className="section-content">
+            <>
                 <div className="section-header">
                     <div className="flex items-center justify-center gap-3 mb-4">
                         <div className="p-3 bg-green-100 rounded-full">
@@ -79,8 +78,7 @@ const DetailedEnvironmentalSection = () => {
                         </ul>
                     </div>
                 </div>
-            </div>
-        </section>
+            </>
     );
 };
 

@@ -32,23 +32,23 @@ const SustainabilityPage = () => {
         <Suspense fallback={<LoadingPage />}>
           <PageHeader />
           <SustainabilityTabs value="overview" onChange={handleTabNavigate} />
-          <section id="overview" className="section-content space-y-24 pt-6">
+          <section id="overview" className="section-content space-y-24">
             <PolicySection />
             <CollaborationSection />
           </section>
-          <section id="environmental" className="section-content pt-12">
+          <section id="environmental" className="section-content">
             <DetailedEnvironmentalSection />
           </section>
-          <section id="social" className="section-content pt-12">
+          <section id="social" className="section-content">
             <DetailedSocialSection />
           </section>
-          <section id="economic" className="section-content pt-12">
+          <section id="economic" className="section-content">
             <DetailedEconomicSection />
           </section>
-          <section id="future" className="section-content pt-12">
+          <section id="future" className="section-content">
             <FutureGoals />
           </section>
-          <section id="reporting" className="section-content pt-12">
+          <section id="reporting" className="section-content">
             <PerformanceReporting />
           </section>
           <ContactBanner />
