@@ -4,8 +4,8 @@ import AnimatedStat from '../ui/AnimatedStat';
 import { Zap, Shield, Clock } from "lucide-react";
 
 const PageHeader = () => {
-  const { t } = useTranslation('about');
-  
+  const { t } = useTranslation('sustainability');
+
   return (
     <section id='about-header'>
       <div className='section-content'>

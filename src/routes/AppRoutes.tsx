@@ -4,6 +4,7 @@ import { lazy } from "react";
 import LangLayout  from "@/components/LangLayout";
 import HomePage    from "@/pages/MainPage";
 import { slugs } from "./slugs";
+import SustainabilityPage from "@/pages/Sustainability";
 
 const About        = lazy(() => import("@/pages/About"));
 const Contact      = lazy(() => import("@/pages/Contact"));
@@ -35,8 +36,8 @@ export default function AppRoutes() {
         <Route path={slugs.tr.partners}   element={<PartnersPage />} />
         <Route path={slugs.en.partners}   element={<PartnersPage />} />
 
-        <Route path={slugs.tr.sustainability}   element={<About />} />
-        <Route path={slugs.en.sustainability}   element={<About />} />
+        <Route path={slugs.tr.sustainability}   element={<SustainabilityPage />} />
+        <Route path={slugs.en.sustainability}   element={<SustainabilityPage />} />
 
         {/* dinamik çözüm sayfası */}
         <Route
