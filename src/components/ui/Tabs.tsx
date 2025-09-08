@@ -53,11 +53,15 @@ export const Tabs = ({ defaultValue, children, className }: TabsProps) => {
 
 export const TabsList = ({ children, className }: TabsListProps) => {
   return (
-    <div className={cn(
-      "inline-flex h-10 items-center justify-center rounded-md bg-neutral-100 p-1 text-neutral-500",
-      "w-full md:w-auto overflow-x-auto scrollbar-hide",
-      className
-    )}>
+    <div
+      className={cn(
+        // Layout & size
+        "flex flex-wrap lg:flex-nowrap items-center gap-2 w-full overflow-x-auto scrollbar-hide",
+        // Visual theme (dark glassy + border)
+        "bg-neutral-900/60 backdrop-blur-sm border border-neutral-800/70 rounded-xl p-2",
+        className
+      )}
+    >
       {children}
     </div>
   );
@@ -72,13 +76,18 @@ export const TabsTrigger = ({ value, children, className }: TabsTriggerProps) =>
       type="button"
       onClick={() => setActiveTab(value)}
       className={cn(
-        "inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-white transition-all",
-        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-950 focus-visible:ring-offset-2",
+        // Base layout & sizing
+        "inline-flex items-center justify-center whitespace-nowrap rounded-lg px-4 py-2 text-sm md:text-base font-medium transition-colors break-keep",
+        // Border / background neutral style
+        "border border-transparent",
+        // Focus styles
+        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950",
+        // Disabled
         "disabled:pointer-events-none disabled:opacity-50",
-        "break-keep",
-        isActive 
-          ? "bg-white text-neutral-950 shadow-sm" 
-          : "hover:bg-white/50 hover:text-neutral-900",
+        // Active / inactive theme
+        isActive
+          ? "bg-amber-500 text-white shadow-md border-amber-400"
+          : "text-neutral-300 hover:text-white hover:bg-amber-500/15",
         className
       )}
     >

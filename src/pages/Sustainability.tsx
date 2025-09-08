@@ -1,22 +1,56 @@
 import LoadingPage from "@/components/ui/LoadingPage";
-import { Suspense } from "react";
-import { 
-  Meta, 
-  PageHeader, 
-  IntroductionSection,
-  SustainabilityTabs
+import { Suspense, useState } from "react";
+import {
+  Meta,
+  PageHeader,
+  SustainabilityTabs,
+  PolicySection,
+  DetailedEnvironmentalSection,
+  DetailedSocialSection,
+  DetailedEconomicSection,
+  PerformanceReporting,
+  FutureGoals,
+  CollaborationSection
 } from "@/components/Sustainability";
 import { ContactBanner } from "@/components/Shared";
 
 const SustainabilityPage = () => {
+  const [activeTab, setActiveTab] = useState<string>("overview");
+
+  const renderContent = () => {
+    switch (activeTab) {
+      case "overview":
+        return (
+          <div className="space-y-16">
+            <PolicySection />
+            <CollaborationSection />
+          </div>
+        );
+      case "environmental":
+        return <DetailedEnvironmentalSection />;
+      case "social":
+        return <DetailedSocialSection />;
+      case "economic":
+        return <DetailedEconomicSection />;
+      case "future":
+        return <FutureGoals />;
+      case "reporting":
+        return <PerformanceReporting />;
+      default:
+        return null;
+    }
+  };
+
   return (
     <>
       <Meta />
       <main className="app-content">
         <Suspense fallback={<LoadingPage />}>
           <PageHeader />
-          <IntroductionSection />
-          <SustainabilityTabs />
+          <SustainabilityTabs value={activeTab} onChange={setActiveTab} className="-mt-4" />
+          <section className="mt-10 space-y-20" aria-live="polite">
+            {renderContent()}
+          </section>
           <ContactBanner />
         </Suspense>
       </main>
