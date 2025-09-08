@@ -1,5 +1,10 @@
 {
-    "title": "References",
+    "label": "References",
+    "title": {
+        "part1": "Technology partner",
+        "part2": "trusted by",
+        "part3": "leading companies"
+    },
     "description": "Trusted By Leading Organizations",
     "meta_description": "See why leading organizations trust us. Explore our global client references and success stories in IT infrastructure and digital transformation.",
     "stats" : {
