@@ -1,5 +1,6 @@
 // Stateless full-width tab bar; content handled by parent page
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
+import { useDeviceType } from "@/lib";
 
 interface SustainabilityTabsProps {
     value: string;
@@ -8,20 +9,40 @@ interface SustainabilityTabsProps {
 }
 
 const SustainabilityTabs = ({ value, onChange, className }: SustainabilityTabsProps) => {
-    const tabs: { key: string; label: string }[] = [
-        { key: 'overview', label: 'Genel Bakış' },
-        { key: 'environmental', label: 'Çevresel' },
-        { key: 'social', label: 'Sosyal' },
-        { key: 'economic', label: 'Ekonomik' },
-        { key: 'future', label: 'Hedefler' },
-        { key: 'reporting', label: 'Raporlama' }
-    ];
+    const tabs = useMemo(() => ([
+        { key: 'overview', label: 'Genel Bakış', target: 'overview' },
+        { key: 'environmental', label: 'Çevresel', target: 'environmental' },
+        { key: 'social', label: 'Sosyal', target: 'social' },
+        { key: 'economic', label: 'Ekonomik', target: 'economic' },
+        { key: 'future', label: 'Hedefler', target: 'future' },
+        { key: 'reporting', label: 'Raporlama', target: 'reporting' }
+    ]), []);
 
     const [open, setOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const [offsetTop, setOffsetTop] = useState(0);
     const headerElRef = useRef<HTMLElement | null>(null);
-        const activeTab = tabs.find(t => t.key === value);
+    const device = useDeviceType();
+        const [visible, setVisible] = useState<string>(value);
+        const activeTab = tabs.find(t => t.key === visible);
+
+        useEffect(() => {
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            setVisible(entry.target.id);
+                        }
+                    });
+                },
+                { rootMargin: '-40% 0px -55% 0px', threshold: [0, 0.25, 0.5, 1] }
+            );
+            tabs.forEach(t => {
+                const el = document.getElementById(t.target);
+                if (el) observer.observe(el);
+            });
+            return () => observer.disconnect();
+    }, [tabs]);
 
         useEffect(() => {
             headerElRef.current = document.querySelector('.app-header');
@@ -58,8 +79,9 @@ const SustainabilityTabs = ({ value, onChange, className }: SustainabilityTabsPr
                     (className ? ` ${className}` : "")
                 }
             >
-                {/* Mobile Dropdown */}
-                        <div className="md:hidden px-4 py-4">
+        {/* Mobile Dropdown (shown when device hook says mobile) */}
+        {device === 'mobile' && (
+            <div className="px-4 py-4">
                             <button
                                 type="button"
                                 onClick={() => setOpen(o => !o)}
@@ -92,12 +114,12 @@ const SustainabilityTabs = ({ value, onChange, className }: SustainabilityTabsPr
                                                 className="mt-2 w-full rounded-md border border-neutral-200 bg-white divide-y divide-neutral-200 shadow-sm"
                                             >
                                     {tabs.map(tab => {
-                                        const active = tab.key === value;
+                                        const active = tab.target === visible;
                                         return (
                                             <li key={tab.key} role="option" aria-selected={active}>
                                                 <button
                                                     type="button"
-                                                    onClick={() => { onChange(tab.key); setOpen(false); }}
+                                                    onClick={() => { onChange(tab.target); setOpen(false); }}
                                                                 className={"w-full text-left px-4 py-3 text-sm transition-colors " + (active ? "text-black font-semibold bg-amber-50 border-l-4 border-amber-500" : "text-neutral-600 hover:text-black hover:bg-neutral-50")}
                                                 >
                                                     {tab.label}
@@ -107,19 +129,21 @@ const SustainabilityTabs = ({ value, onChange, className }: SustainabilityTabsPr
                                     })}
                                 </ul>
                             </div>
-                        </div>
+            </div>
+        )}
 
-                {/* Desktop Tab Bar */}
-                <div className="hidden md:flex w-full flex-wrap justify-center gap-x-10 gap-y-3 px-6 md:px-10 border-t border-neutral-200">
+        {/* Desktop Tab Bar (device hook desktop) */}
+        {device === 'desktop' && (
+        <div className="w-full flex flex-wrap justify-center gap-x-10 gap-y-3 px-8 xl:px-12 border-t border-neutral-200">
                     {tabs.map(tab => {
-                        const active = value === tab.key;
+                        const active = visible === tab.target;
                         return (
                             <button
                                 key={tab.key}
                                 type="button"
                                 aria-selected={active}
                                 aria-current={active ? 'page' : undefined}
-                                onClick={() => onChange(tab.key)}
+                                onClick={() => onChange(tab.target)}
                                 className={
                                     "relative py-6 text-sm md:text-base font-medium tracking-wide transition-colors px-4 " +
                                     (active
@@ -132,6 +156,7 @@ const SustainabilityTabs = ({ value, onChange, className }: SustainabilityTabsPr
                         );
                     })}
                 </div>
+                )}
             </nav>
         );
 };

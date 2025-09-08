@@ -1,5 +1,5 @@
 import LoadingPage from "@/components/ui/LoadingPage";
-import { Suspense, useState } from "react";
+import { Suspense } from "react";
 import {
   Meta,
   PageHeader,
@@ -15,29 +15,13 @@ import {
 import { ContactBanner } from "@/components/Shared";
 
 const SustainabilityPage = () => {
-  const [activeTab, setActiveTab] = useState<string>("overview");
-
-  const renderContent = () => {
-    switch (activeTab) {
-      case "overview":
-        return (
-          <div className="space-y-16">
-            <PolicySection />
-            <CollaborationSection />
-          </div>
-        );
-      case "environmental":
-        return <DetailedEnvironmentalSection />;
-      case "social":
-        return <DetailedSocialSection />;
-      case "economic":
-        return <DetailedEconomicSection />;
-      case "future":
-        return <FutureGoals />;
-      case "reporting":
-        return <PerformanceReporting />;
-      default:
-        return null;
+  // Tabs now just anchor-scroll; no internal state
+  const handleTabNavigate = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      const rect = el.getBoundingClientRect();
+      const absoluteY = window.scrollY + rect.top - 90; // offset for sticky bars
+      window.scrollTo({ top: absoluteY, behavior: 'smooth' });
     }
   };
 
@@ -47,9 +31,25 @@ const SustainabilityPage = () => {
       <main className="app-content">
         <Suspense fallback={<LoadingPage />}>
           <PageHeader />
-          <SustainabilityTabs value={activeTab} onChange={setActiveTab} />
-          <section className="section-content">
-            {renderContent()}
+          <SustainabilityTabs value="overview" onChange={handleTabNavigate} />
+          <section id="overview" className="section-content space-y-24 pt-6">
+            <PolicySection />
+            <CollaborationSection />
+          </section>
+          <section id="environmental" className="section-content pt-12">
+            <DetailedEnvironmentalSection />
+          </section>
+          <section id="social" className="section-content pt-12">
+            <DetailedSocialSection />
+          </section>
+          <section id="economic" className="section-content pt-12">
+            <DetailedEconomicSection />
+          </section>
+          <section id="future" className="section-content pt-12">
+            <FutureGoals />
+          </section>
+          <section id="reporting" className="section-content pt-12">
+            <PerformanceReporting />
           </section>
           <ContactBanner />
         </Suspense>
