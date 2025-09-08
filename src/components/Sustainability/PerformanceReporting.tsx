@@ -14,7 +14,7 @@ const PerformanceReporting = () => {
                             <div className="p-3 bg-blue-100 rounded-full">
                                 <BarChart3 className="w-6 h-6 text-blue-600" />
                             </div>
-                            <h2 className="text-3xl md:text-4xl font-bold text-neutral-800 text-center">
+                            <h2 className="text-3xl md:text-4xl font-bold text-neutral-800">
                                 {t('page.sections.performance.title')}
                             </h2>
                         </div>
