@@ -1,0 +1,192 @@
+{
+  "label": "Sustainability",
+  "title": {
+    "part1": "Building a",
+    "part2": "sustainable future",
+    "part3": "with environmental, social and economic responsibility"
+  },
+  "description": "Our strategies benefit both our company and society as a whole",
+  "meta": {
+    "title": "TSSX | Sustainability",
+    "description": "At TSSX, we embrace our environmental, social, and economic responsibilities through our sustainability vision and strategies.",
+    "keywords": "TSSX, sustainability, environmental responsibility, social responsibility, economic sustainability, ESG, energy efficiency, carbon reduction, employee rights, community engagement, ethical business practices"
+  },
+  "page": {
+    "header": "Sustainability",
+    "intro": "TSSX is committed to building a sustainable future by taking responsibility in environmental, social, and economic domains. Our strategies aim to benefit both our company and society.",
+    "tabs": {
+  "overview": "Vision & Strategy",
+  "pillars": "Focus Areas",
+  "progress": "Performance & Goals",
+  "commitment": "Commitment & Collaboration"
+    },
+    "sections": {
+      "introduction": {
+        "title": "Introduction and Overview",
+        "description": "This document outlines TSSX Information Technologies and Consulting Inc.'s sustainability efforts and commitments. The company adopts a range of strategies and policies to fulfill its environmental, social, and economic responsibilities.",
+        "pillars": {
+          "environmental": "Environmental Responsibilities",
+          "social": "Social Responsibilities", 
+          "economic": "Economic Sustainability"
+        }
+      },
+      "policy": {
+        "title": "Our Sustainability Policy",
+        "environmental": {
+          "title": "Environmental Responsibility",
+          "items": [
+            "Enhance energy efficiency in workspaces",
+            "Implement waste reduction and reuse strategies",
+            "Determine and reduce carbon footprint",
+            "Promote sustainable transportation policies"
+          ]
+        },
+        "social": {
+          "title": "Social Responsibility",
+          "items": [
+            "Fair wage policies and employee welfare enhancement",
+            "Provide education and development opportunities for employees",
+            "Active participation in local community projects",
+            "Promote diversity and inclusion programs"
+          ]
+        },
+        "economic": {
+          "title": "Economic Sustainability",
+          "items": [
+            "Support fair trade principles",
+            "Develop long-term financial strategies",
+            "Sustainable investment and growth strategies"
+          ]
+        }
+      },
+      "environmental": {
+        "title": "Environmental Sustainability",
+        "energy": {
+          "title": "Energy Efficiency and Renewable Energy",
+          "items": [
+            "Conduct energy audits in workspaces"
+          ]
+        },
+        "waste": {
+          "title": "Waste Management and Recycling",
+          "items": [
+            "Apply waste reduction strategies",
+            "Expand recycling programs in all work environments"
+          ]
+        },
+        "carbon": {
+          "title": "Carbon Reduction and Transportation",
+          "items": [
+            "Monitor and reduce carbon emissions",
+            "Promote sustainable transportation alternatives"
+          ]
+        }
+      },
+      "social": {
+        "title": "Social Responsibility",
+        "employee": {
+          "title": "Employee Rights and Welfare",
+          "items": [
+            "Strengthen fair wage policies",
+            "Programs supporting employee health and welfare"
+          ]
+        },
+        "community": {
+          "title": "Community Engagement and Volunteering",
+          "items": [
+            "Provide financial support to local community projects",
+            "Encourage employees in volunteering activities"
+          ]
+        },
+        "diversity": {
+          "title": "Diversity and Inclusion",
+          "items": [
+            "Organize diversity and inclusion training",
+            "Value different perspectives and talents"
+          ]
+        }
+      },
+      "economic": {
+        "title": "Economic Sustainability",
+        "ethics": {
+          "title": "Ethical Business Practices and Supply Chain",
+          "items": [
+            "End cooperation with suppliers not adhering to fair trade principles"
+          ]
+        },
+        "stability": {
+          "title": "Financial Stability and Sustainable Investments",
+          "items": [
+            "Develop long-term financial strategies",
+            "Evaluate sustainability-focused investment opportunities"
+          ]
+        }
+      },
+      "performance": {
+        "title": "Performance Measurement and Reporting",
+        "description": "We monitor sustainability performance through quantitative and qualitative indicators, disclose transparently, and embed results into a continuous improvement loop.",
+        "items": [
+          "Publication of annual and quarterly sustainability (ESG) reports",
+          "Baseline and target year definitions to track progress",
+          "Periodic (quarterly / annual) stakeholder updates"
+        ],
+        "kpis": {
+          "title": "Key Tracked KPIs (Examples)",
+          "items": [
+            "Energy consumption (kWh / employee)",
+            "Carbon emissions (tCO₂e / year)",
+            "Recycled waste ratio (%)",
+            "Female employee ratio (%)",
+            "Training hours (per capita / year)",
+            "Volunteer participation rate (%)"
+          ]
+        },
+        "process": {
+          "title": "Process & Methodology",
+          "items": [
+            "Data collection: operational systems, HR records, supplier disclosures",
+            "Validation: internal control + external assurance when needed",
+            "Benchmarking: sector averages & prior-year results",
+            "Improvement cycle: Measure - Analyze - Act - Review"
+          ]
+        },
+        "assurance": {
+          "title": "Assurance & Improvement",
+          "items": [
+            "Annual management review for critical KPI set",
+            "Risk & opportunity assessment feeding target updates",
+            "Transparency via publication of methodology notes"
+          ]
+        }
+      },
+      "future": {
+        "title": "Future Goals",
+        "performance": {
+          "title": "Improving Sustainability Performance",
+          "items": [
+            "Further reduce carbon footprint"
+          ]
+        },
+        "impact": {
+          "title": "Increasing Social and Environmental Impact",
+          "items": [
+            "More investment in social projects and local communities",
+            "Strengthen communication efforts to increase awareness about sustainability"
+          ]
+        }
+      },
+      "contact": {
+        "title": "Communication & Collaboration",
+        "description": "We collaborate with our stakeholders through transparent communication and joint sustainability projects.",
+        "items": [
+          "Regular communication strategies with stakeholders",
+          "Sustainability-related collaborations and joint projects"
+        ]
+      },
+      "conclusion": {
+        "title": "Conclusion & Commitment",
+        "text": "This document details TSSX Information Technologies and Consulting Inc.'s sustainability efforts and states its commitments toward a sustainable future. The policies we implement to reduce environmental impact, amplify social value, and strengthen long-term economic resilience are grounded in transparency, ethics, and continuous improvement. Together with our stakeholders, we aim for measurable, traceable, and optimizable sustainability performance."
+      }
+    }
+  }
+}

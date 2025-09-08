@@ -20,14 +20,15 @@ const AnimatedTitle = ({
     lg: "text-5xl md:text-6xl",
   };
 
+  // title'ı kelimelerine ayırıyoruz
+  const words = title.split(" ");
+
   return (
-    <header
-      className={`section-header ${className ?? ""}`}
-    >
-      <SpecialText
-        className={`${sizeClassMap[size]} font-extrabold text-neutral-900`}
-      >
-        <AnimatedText text={title} />
+    <header className={`section-header ${className ?? ""}`}>
+      <SpecialText className={`${sizeClassMap[size]} font-extrabold text-neutral-900 flex flex-wrap justify-center gap-4`}>
+        {words.map((word, idx) => (
+          <AnimatedText key={idx} text={word} />
+        ))}
       </SpecialText>
 
       {description && (

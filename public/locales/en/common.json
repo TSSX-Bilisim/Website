@@ -14,7 +14,8 @@
             "links": {
                 "aboutUs": "About Us",
                 "references": "References",
-                "partners": "Partners"
+                "partners": "Partners",
+                "sustainability": "Sustainability"
             }
         },
         "solutionLinks": {
@@ -37,13 +38,14 @@
             "solutions": "Solutions",
             "aboutUs": "About Us",
             "references": "References",
-            "partners": "Partners"
+            "partners": "Partners",
+            "sustainability": "Sustainability"
         },
         "solutionLinks": {
             "title": "Solutions",
             "links": {
                 "observability": "Observability",
-                "assetManagement": "IT Discovery & Asset Management",
+                "asset-management": "IT Discovery & Asset Management",
                 "automation": "Automation",
                 "security": "Security",
                 "finops": "FinOPS"

@@ -8,7 +8,8 @@ const useDeviceType = (): DeviceType => {
   useEffect(() => {
     const checkDeviceType = () => {
       const width = window.innerWidth;
-      if (width < 960) {
+      // Adjusted breakpoint: show mobile menu earlier for crowded nav
+      if (width < 1180) {
         setDeviceType("mobile");
       } else {
         setDeviceType("desktop");

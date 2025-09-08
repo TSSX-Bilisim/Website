@@ -8,7 +8,7 @@ const Meta = () => {
 
   return (
     <Helmet>
-        <title>{t("title")} | {COMPANY_NAME}</title>
+        <title>{t("label")} | {COMPANY_NAME}</title>
         <meta name="description" content={t("meta.description")} />
         <meta name="keywords" content={t("meta.keywords")} />
 

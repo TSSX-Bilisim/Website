@@ -3,8 +3,19 @@
     "description": "TSS-X Bilişim Teknolojileri hakkında bilgi edinin - Güvenilir BT altyapı yönetimi ortağınız. İstanbul Teknik Üniversitesi'nden kurumsal çözümlerde kanıtlanmış başarı geçmişine sahip uzman ekibimizi keşfedin.",
     "keywords": "TSS-X hakkında, BT altyapı uzmanları, otomasyon uzmanları, kurumsal BT, İstanbul Teknik Üniversitesi, sistem mühendisleri, baş danışmanlar, BT yönetim ekibi, teknoloji liderliği"
   },
-  "title": "Hakkımızda",
+  "label": "Hakkımızda",
+  "title": {
+    "part1": "BT altyapı yönetiminde",
+    "part2": "güvenilir ortağınız",
+    "part3": "olmaya odaklanıyoruz"
+  },
   "description": "Güvenilir BT altyapı yönetimi ortağınız",
+  "tabs": {
+    "overview": "Genel Bakış",
+    "team": "Ekip",
+    "timeline": "Zaman Çizelgesi",
+    "success": "Başarılar"
+  },
   "stats": {
     "faster": "Daha Hızlı Tedarik",
     "compliance": "Mevzuat Uyumluluğu",

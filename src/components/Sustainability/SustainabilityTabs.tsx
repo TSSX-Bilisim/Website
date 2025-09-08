@@ -1,0 +1,169 @@
+// Stateless full-width tab bar; content handled by parent page
+import { useState, useEffect, useRef, useMemo } from "react";
+import { useTranslation } from "react-i18next";
+import { useDeviceType } from "@/lib";
+
+interface SustainabilityTabsProps {
+    value: string;
+    onChange: (val: string) => void;
+    className?: string;
+}
+
+const SustainabilityTabs = ({ value, onChange, className }: SustainabilityTabsProps) => {
+    const { t } = useTranslation('sustainability');
+    // Logical grouping collapsed into 4 composite sections
+    // overview -> existing intro/policy
+    // pillars -> environmental + social + economic
+    // progress -> future + reporting
+    // commitment -> conclusion/contact
+    const tabs = useMemo(() => ([
+        { key: 'overview', label: t('page.tabs.overview'), target: 'overview' },
+        { key: 'pillars', label: t('page.tabs.pillars'), target: 'pillars' },
+        { key: 'progress', label: t('page.tabs.progress'), target: 'progress' }
+    ]), [t]);
+
+    const [scrolled, setScrolled] = useState(false);
+    const [offsetTop, setOffsetTop] = useState(0);
+    const headerElRef = useRef<HTMLElement | null>(null);
+    const device = useDeviceType();
+    const [visible, setVisible] = useState<string>(value);
+    const activeTab = tabs.find(t => t.key === visible);
+
+        useEffect(() => {
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            setVisible(entry.target.id);
+                        }
+                    });
+                },
+        { rootMargin: '-40% 0px -55% 0px', threshold: [0, 0.25, 0.5, 1] }
+            );
+    tabs.forEach(tab => {
+        const el = document.getElementById(tab.target);
+                if (el) observer.observe(el);
+            });
+            return () => observer.disconnect();
+    }, [tabs]);
+
+        useEffect(() => {
+            headerElRef.current = document.querySelector('.app-header');
+            const headerHeight = headerElRef.current ? headerElRef.current.getBoundingClientRect().height : 0;
+            // initial offset: header visible
+            setOffsetTop(headerHeight);
+            let lastY = window.scrollY;
+            const onScroll = () => {
+                const y = window.scrollY;
+                setScrolled(y > 40);
+                const goingDown = y > lastY;
+                // When scrolling down, collapse offset (header hides via its own transform). Scrolling up: restore.
+                if (goingDown) {
+                    setOffsetTop(0);
+                } else {
+                    // restore header height (re-measure in case of responsive changes)
+                    const h = headerElRef.current ? headerElRef.current.getBoundingClientRect().height : headerHeight;
+                    setOffsetTop(h);
+                }
+                lastY = y;
+            };
+            window.addEventListener('scroll', onScroll, { passive: true });
+            return () => window.removeEventListener('scroll', onScroll);
+        }, []);
+
+    const [openMobile, setOpenMobile] = useState(false);
+
+        return (
+            <nav
+                id="sustainability-tabs"
+                aria-label="Sürdürülebilirlik sekmeleri"
+                style={{ top: offsetTop }}
+                className={
+                    "w-full bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80 sticky z-40 transition-shadow " +
+                    (scrolled ? "shadow-sm ring-1 ring-neutral-200" : "") +
+                    (className ? ` ${className}` : "")
+                }
+            >
+        {/* Mobile Dropdown (shown when device hook says mobile) */}
+        {device === 'mobile' && (
+            <div className="px-4 py-4">
+                <button
+                    type="button"
+                    onClick={() => setOpenMobile(o => !o)}
+                    aria-haspopup="listbox"
+                    aria-expanded={openMobile}
+                    aria-controls="sustainability-mobile-tablist"
+                    className="w-full flex items-center justify-between rounded-md border border-neutral-200 bg-white px-4 py-3 text-sm font-medium text-neutral-700 hover:border-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-500/30"
+                >
+                    <span>{activeTab?.label}</span>
+                    <svg
+                        className={"w-4 h-4 transition-transform " + (openMobile ? "rotate-180" : "rotate-0")}
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        viewBox="0 0 24 24"
+                    >
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M6 9l6 6 6-6" />
+                    </svg>
+                </button>
+                <div
+                    className={
+                        "overflow-hidden transition-[max-height,opacity] duration-300 " +
+                        (openMobile ? "max-h-96 opacity-100" : "max-h-0 opacity-0")
+                    }
+                    id="sustainability-mobile-tablist"
+                >
+                    <ul
+                        role="listbox"
+                        tabIndex={-1}
+                        className="mt-2 w-full rounded-md border border-neutral-200 bg-white divide-y divide-neutral-200 shadow-sm"
+                    >
+                        {tabs.map(tab => {
+                            const active = tab.target === visible;
+                            return (
+                                <li key={tab.key} role="option" aria-selected={active}>
+                                    <button
+                                        type="button"
+                                        onClick={() => { onChange(tab.target); setOpenMobile(false); }}
+                                        className={"w-full text-left px-4 py-3 text-sm transition-colors " + (active ? "text-black font-semibold bg-amber-50 border-l-4 border-amber-500" : "text-neutral-600 hover:text-black hover:bg-neutral-50")}
+                                    >
+                                        {tab.label}
+                                    </button>
+                                </li>
+                            );
+                        })}
+                    </ul>
+                </div>
+            </div>
+        )}
+
+        {/* Desktop Tab Bar (device hook desktop) */}
+        {device === 'desktop' && (
+        <div className="w-full flex flex-wrap justify-center gap-x-10 gap-y-3 px-8 xl:px-12 border-t border-neutral-200">
+                    {tabs.map(tab => {
+                        const active = visible === tab.target;
+                        return (
+                            <button
+                                key={tab.key}
+                                type="button"
+                                aria-selected={active}
+                                aria-current={active ? 'page' : undefined}
+                                onClick={() => onChange(tab.target)}
+                                className={
+                                    "relative py-6 text-sm md:text-base font-medium tracking-wide transition-colors px-4 " +
+                                    (active
+                                        ? "text-black font-semibold after:absolute after:left-0 after:bottom-0 after:h-[3px] after:w-full after:bg-amber-500"
+                                        : "text-neutral-500 hover:text-black focus-visible:text-black")
+                                }
+                            >
+                                {tab.label}
+                            </button>
+                        );
+                    })}
+                </div>
+                )}
+            </nav>
+        );
+};
+
+export default SustainabilityTabs;

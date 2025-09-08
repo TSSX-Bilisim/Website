@@ -14,7 +14,7 @@ const SolutionServices = ({ solution }: SolutionServicesProps) => {
   const { t } = useTranslation();
 
   return (
-    <section className="py-16 bg-neutral-50 animate-section">
+    <section id="services" className="py-16 bg-neutral-50 animate-section">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           {/* Header */}

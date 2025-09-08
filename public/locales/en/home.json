@@ -33,7 +33,7 @@
             },
             "security": {
                 "title": "Security",
-                "subtitle": "Secure and Manage Access",
+                "subtitle": "Ensure Security & Compliance",
                 "tools": {
                     "monosign": "MonoSign",
                     "monopam": "MonoPAM",
@@ -42,14 +42,15 @@
             },
             "finops": {
                 "title": "FinOps",
-                "subtitle": "Optimize Cloud Spend",
+                "subtitle": "Optimize Cloud Costs",
                 "tools": {
                     "cloudhealth": "CloudHealth",
                     "apptio": "Apptio",
                     "harness": "Harness"
                 }
             }
-        }
+        },
+        "learn_more": "Learn More"
     }
     
 }

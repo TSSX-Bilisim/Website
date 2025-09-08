@@ -1,11 +1,14 @@
 import { Link } from "react-router";
-import { ArrowLeft } from "lucide-react";
+import { Settings } from "lucide-react";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import DecorativeBackground from "@/components/ui/DecorativeBackground";
-import AnimatedText from "@/components/ui/AnimatedText";
+import { SectionLabel } from "@/components/Shared";
 import type { DetailedSolution } from "@/types/solution";
 import { useTranslation } from 'react-i18next';
+import { useParams } from "react-router";
+import { buildPath } from "@/lib";
+import AnimatedStat from "../ui/AnimatedStat";
 
 interface SolutionHeroProps {
   solution: DetailedSolution;
@@ -14,6 +17,8 @@ interface SolutionHeroProps {
 const SolutionHero = ({ solution }: SolutionHeroProps) => {
   const { t } = useTranslation();
   const heroRef = useRef<HTMLDivElement>(null);
+  const { lng } = useParams();
+  const lang = lng === "en" ? "en" : "tr";
 
   // Use heroMetrics from solution if available, otherwise fallback to default
   const metrics = solution.heroMetrics || [];
@@ -37,64 +42,41 @@ const SolutionHero = ({ solution }: SolutionHeroProps) => {
   return (
     <DecorativeBackground
       variant="dark"
-      className="bg-gradient-to-br from-neutral-900 via-neutral-800 to-amber-900 text-white py-20"
+      className="bg-gradient-to-br from-neutral-900 via-neutral-800 to-amber-900 text-white"
     >
-      <div className="container mx-auto px-4">
-        <div ref={heroRef} className="max-w-6xl mx-auto">
-          <Link
-            to="/"
-            className="inline-flex items-center text-amber-300 hover:text-amber-200 transition-colors mb-8 group"
-          >
-            <ArrowLeft className="mr-2 size-5 group-hover:-translate-x-1 transition-transform" />
-            {t('back_to_home')}
-          </Link>
+      <div ref={heroRef} className="section-content">
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Column - Content */}
-            <div>
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center mr-4">
-                  {solution.icon}
-                </div>
-                <div>
-                  <h1 className="text-3xl break-words font-bold mb-2">
-                    <AnimatedText text={solution.title} />
-                  </h1>
-                  <p className="text-xl text-amber-200">{solution.titleTr}</p>
-                </div>
-              </div>
-
-              <p className="text-lg text-neutral-200 leading-relaxed mb-8">
-                {solution.detailedDescription}
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4">
+        {/* Header Section - vertical stack layout */}
+        <div className="vertical-stack mx-auto items-center gap-block max-w-xs md:max-w-xl xl:max-w-5xl">
+          <SectionLabel icon={<Settings className="size-4" />}>{t('nav_solutions')}</SectionLabel>
+          <div className="vertical-stack gap-element items-center">
+            <h1 className="title-hero text-center mb-element break-keep">
+              {solution.title}
+            </h1>
+            <p className="text-body text-center w-2/3 md:w-full text-white/80 break-keep">
+              {solution.titleTr}
+            </p>
+            <div className="text-center lg:text-left">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Link
-                  to="/contact"
+                  to={buildPath(lang, "contact")}
                   className="bg-amber-500 text-white px-8 py-3 rounded-full font-medium hover:bg-amber-600 transition-colors text-center"
                 >
                   {t('connect_with_expert')}
                 </Link>
               </div>
             </div>
-            {/* Right Column - Metrics */}
-            <div className="space-y-6">
-              {metrics.map((metric, index) => (
-                <div
-                  key={index}
-                  className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20"
-                >
-                  <div className="flex items-center mb-3">
-                    <div className="text-amber-300 mr-4">{metric.icon}</div>
-                    <div className="text-4xl font-bold text-white">
-                      {metric.value}
-                    </div>
-                  </div>
-                  <p className="text-amber-200 text-sm">{metric.label}</p>
-                </div>
-              ))}
-            </div>
           </div>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-6 mt-8">
+            {metrics.map((metric, index) => (
+                <AnimatedStat
+                    key={index}
+                    icon={metric.icon}
+                    value={metric.value}
+                    label={metric.label}
+                />
+            ))}
         </div>
       </div>
     </DecorativeBackground>

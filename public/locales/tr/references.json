@@ -1,5 +1,10 @@
 {
-  "title": "Referanslarımız",
+  "label": "Referanslarımız",
+  "title": {
+    "part1": "Lider şirketlerin",
+    "part2": "güvendiği",
+    "part3": "teknoloji partneri"
+  },
   "description": "Lider Şirketlerin Tercihi",
   "meta_description": "Lider kuruluşların bize neden güvendiğini görün. BT altyapısı ve dijital dönüşümdeki küresel müşteri referanslarımızı ve başarı hikayelerimizi keşfedin.",
   "stats": {

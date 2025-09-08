@@ -1,0 +1,15 @@
+{
+  "about": "about",
+  "references": "references",
+  "contact": "contact",
+  "partners": "partners",
+  "solutions": "solutions",
+  "sustainability": "sustainability",
+  "solutionList" : {
+      "observability": "observability",
+      "asset-management": "asset-management",
+      "automation": "automation",
+      "security": "security",
+      "finops": "finops"
+  }
+}
