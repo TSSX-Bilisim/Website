@@ -16,9 +16,6 @@ const PageHeader = () => {
             <h1 className="title-hero text-center mb-element break-keep">
               {t('title.part1')} <span className="text-amber-500">{t('title.part2')} </span>{t('title.part3')}
             </h1>
-            <p className="text-body text-center w-2/3 md:w-full text-white/80 break-keep">
-              {t('description')}
-            </p>
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
