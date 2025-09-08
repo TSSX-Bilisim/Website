@@ -14,20 +14,20 @@ const Meta = () => {
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://tssx.com/about" />
-        <meta property="og:title" content="About TSS-X | IT Infrastructure & Automation Experts" />
+        <meta property="og:url" content="https://tssx.com/sustainability" />
+        <meta property="og:title" content="TSS-X Sustainability | Environmental & Social Responsibility" />
         <meta property="og:description" content={t("meta.description")} />
-        <meta property="og:image" content="https://tssx.com/img/tssx/about-og.png" />
+        <meta property="og:image" content="https://tssx.com/img/tssx/sustainability-og.png" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://tssx.com/about" />
-        <meta name="twitter:title" content="About TSS-X | IT Infrastructure & Automation Experts" />
+        <meta name="twitter:url" content="https://tssx.com/sustainability" />
+        <meta name="twitter:title" content="TSS-X Sustainability | Environmental & Social Responsibility" />
         <meta name="twitter:description" content={t("meta.description")} />
-        <meta name="twitter:image" content="https://tssx.com/img/tssx/about-og.png" />
+        <meta name="twitter:image" content="https://tssx.com/img/tssx/sustainability-og.png" />
 
         {/* Additional SEO */}
-        <link rel="canonical" href="https://tssx.com/about" />
+        <link rel="canonical" href="https://tssx.com/sustainability" />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="TSS-X Information Technologies" />
         <meta name="geo.region" content="TR" />

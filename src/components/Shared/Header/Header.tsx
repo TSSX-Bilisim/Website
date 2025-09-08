@@ -29,6 +29,7 @@ const Header = () => {
     references: buildPath(lang, "references"),
     partners: buildPath(lang, "partners"),
     contact: buildPath(lang, "contact"),
+    sustainability: buildPath(lang, "sustainability"),
     solutions: slugs[lang].solutions,
   };
 
@@ -52,6 +53,7 @@ const Header = () => {
                   ))}
                 </Dropdown>
                 <NavItem to={links.about} label={t("header.nav.aboutUs")} />
+                <NavItem to={links.sustainability} label={t("header.nav.sustainability")} />
                 <NavItem to={links.references} label={t("header.nav.references")} />
                 <NavItem to={links.partners} label={t("header.nav.partners")} />
               </ul>

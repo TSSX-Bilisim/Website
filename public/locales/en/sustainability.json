@@ -1,8 +1,53 @@
 {
+  "title": "Sustainability",
   "meta": {
-    "description": "Learn about TSS-X Information Technologies - Your trusted partner in IT infrastructure management. Discover our team of experts from Istanbul Technical University and our proven track record in enterprise solutions.",
-    "keywords": "about TSS-X, IT infrastructure experts, automation specialists, enterprise IT, Istanbul Technical University, systems engineers, principal consultants, IT management team, technology leadership"
+    "title": "TSSX | Sustainability",
+    "description": "At TSSX, we embrace our environmental, social, and economic responsibilities through our sustainability vision and strategies.",
+    "keywords": "TSSX, sustainability, environmental responsibility, social responsibility, economic sustainability, ESG, energy efficiency, carbon reduction, employee rights, community engagement, ethical business practices"
   },
-  "title": "About Us",
-  "description": "Your trusted partner in IT infrastructure management"
+  "page": {
+    "header": "Sustainability",
+    "intro": "TSSX is committed to building a sustainable future by taking responsibility in environmental, social, and economic domains. Our strategies aim to benefit both our company and society.",
+    "sections": {
+      "policy": {
+        "title": "Our Sustainability Policy",
+        "environmental": {
+          "title": "Environmental Responsibility",
+          "items": [
+            "Increase energy efficiency",
+            "Implement waste reduction and recycling strategies",
+            "Measure and reduce our carbon footprint"
+          ]
+        },
+        "social": {
+          "title": "Social Responsibility",
+          "items": [
+            "Protect employee rights and well-being",
+            "Contribute to local community projects",
+            "Promote diversity and inclusion"
+          ]
+        },
+        "economic": {
+          "title": "Economic Sustainability",
+          "items": [
+            "Support fair trade principles",
+            "Ensure long-term financial stability",
+            "Develop sustainable investment strategies"
+          ]
+        }
+      },
+      "future": {
+        "title": "Our Future Goals",
+        "items": [
+          "Further reduce our carbon footprint",
+          "Increase investments in social projects",
+          "Raise awareness of sustainability in society"
+        ]
+      },
+      "contact": {
+        "title": "Contact & Collaboration",
+        "description": "We collaborate with our stakeholders through transparent communication and joint sustainability projects."
+      }
+    }
+  }
 }

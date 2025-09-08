@@ -8,6 +8,7 @@ export const getFooterLinks = (lang: "tr" | "en") => {
   return {
     companyLinks: [
       { href: `/${lang}/${slugs[lang].about}`, labelKey: "footer.companyLinks.links.aboutUs" },
+      { href: `/${lang}/${slugs[lang].sustainability}`, labelKey: "footer.companyLinks.links.sustainability" },
       { href: `/${lang}/${slugs[lang].references}`, labelKey: "footer.companyLinks.links.references" },
       { href: `/${lang}/${slugs[lang].partners}`, labelKey: "footer.companyLinks.links.partners" },
     ],

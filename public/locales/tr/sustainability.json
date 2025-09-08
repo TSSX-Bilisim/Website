@@ -1,8 +1,53 @@
 {
-    "meta": {
-        "description": "Learn about TSS-X Information Technologies - Your trusted partner in IT infrastructure management. Discover our team of experts from Istanbul Technical University and our proven track record in enterprise solutions.",
-        "keywords": "about TSS-X, IT infrastructure experts, automation specialists, enterprise IT, Istanbul Technical University, systems engineers, principal consultants, IT management team, technology leadership"
-    },
-    "title": "TSSX Sürdürülebilirlik Stratejisi",
-    "description": "Şirketimiz, çevresel, sosyal ve ekonomik sorumluluklarını yerine getirmek amacıyla çeşitli sürdürülebilirlik stratejileri uygulamaktadır"
+  "title": "Sürdürülebilirlik",
+  "meta": {
+    "title": "TSSX | Sürdürülebilirlik",
+    "description": "TSSX olarak çevresel, sosyal ve ekonomik sorumluluklarımızı yerine getirmek için sürdürülebilirlik vizyonumuzu hayata geçiriyoruz.",
+    "keywords": "TSSX, sürdürülebilirlik, çevresel sorumluluk, sosyal sorumluluk, ekonomik sürdürülebilirlik, ESG, enerji verimliliği, karbon azaltımı, çalışan hakları, toplumsal katılım, etik iş uygulamaları"
+  },
+  "page": {
+    "header": "Sürdürülebilirlik",
+    "intro": "TSSX, çevresel, sosyal ve ekonomik alanlarda sürdürülebilir bir gelecek için sorumluluk üstlenmektedir. Bu vizyon doğrultusunda geliştirdiğimiz stratejiler, hem şirketimizin hem de toplumun faydasını gözetmektedir.",
+    "sections": {
+      "policy": {
+        "title": "Sürdürülebilirlik Politikamız",
+        "environmental": {
+          "title": "Çevresel Sorumluluk",
+          "items": [
+            "Enerji verimliliğini artırmak",
+            "Atık azaltma ve geri dönüşüm stratejilerini uygulamak",
+            "Karbon ayak izimizi belirleyip azaltmak"
+          ]
+        },
+        "social": {
+          "title": "Sosyal Sorumluluk",
+          "items": [
+            "Çalışan hakları ve refahını korumak",
+            "Yerel topluluk projelerine katkı sağlamak",
+            "Çeşitlilik ve kapsayıcılığı teşvik etmek"
+          ]
+        },
+        "economic": {
+          "title": "Ekonomik Sürdürülebilirlik",
+          "items": [
+            "Adil ticaret ilkelerini desteklemek",
+            "Uzun vadeli finansal istikrar sağlamak",
+            "Sürdürülebilir yatırım stratejileri geliştirmek"
+          ]
+        }
+      },
+      "future": {
+        "title": "Gelecek Hedeflerimiz",
+        "items": [
+          "Karbon ayak izimizi daha da azaltmak",
+          "Sosyal projelere yatırım artırmak",
+          "Toplumda sürdürülebilirlik farkındalığını güçlendirmek"
+        ]
+      },
+      "contact": {
+        "title": "İletişim ve İş Birliği",
+        "description": "Sürdürülebilirlik yolculuğumuzda paydaşlarımızla güçlü iletişim ve ortak projeler geliştiriyoruz."
+      }
+    }
+  }
 }
