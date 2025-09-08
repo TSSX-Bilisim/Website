@@ -33,18 +33,18 @@ const SustainabilityPage = () => {
           <PageHeader />
           <SustainabilityTabs value="overview" onChange={handleTabNavigate} />
           {/* Overview: intro policy + collaboration */}
-          <section id="overview" className="section-content space-y-24">
+          <section id="overview" className="section-content">
             <PolicySection />
             <CollaborationSection />
           </section>
           {/* Pillars: wrap environmental/social/economic */}
-          <section id="pillars" className="section-content space-y-32">
+          <section id="pillars" className="section-content">
             <div id="environmental"><DetailedEnvironmentalSection /></div>
             <div id="social"><DetailedSocialSection /></div>
             <div id="economic"><DetailedEconomicSection /></div>
           </section>
           {/* Progress: future goals + reporting */}
-          <section id="progress" className="section-content space-y-32">
+          <section id="progress" className="section-content">
             <div id="reporting"><PerformanceReporting /></div>
             <div id="future"><FutureGoals /></div>
           </section>
