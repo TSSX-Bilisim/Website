@@ -35,6 +35,9 @@ export default function AppRoutes() {
         <Route path={slugs.tr.partners}   element={<PartnersPage />} />
         <Route path={slugs.en.partners}   element={<PartnersPage />} />
 
+        <Route path={slugs.tr.sustainability}   element={<About />} />
+        <Route path={slugs.en.sustainability}   element={<About />} />
+
         {/* dinamik çözüm sayfası */}
         <Route
           path={`${slugs.tr.solutions}/:slug`}
