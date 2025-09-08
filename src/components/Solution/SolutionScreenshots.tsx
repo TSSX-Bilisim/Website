@@ -53,7 +53,7 @@ const SolutionScreenshots = ({ solution }: SolutionScreenshotsProps) => {
 
   return (
     <>
-      <section className="py-20 animate-section bg-neutral-50">
+  <section id="screenshots" className="py-20 animate-section bg-neutral-50">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">

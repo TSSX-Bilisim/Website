@@ -16,7 +16,7 @@ export const getDetailedSolutionData = (t: TFunction): DetailedSolution[] => [
       tr: "gozlenebilirlik"
     },
     title: t("solution_title_observability"),
-    titleTr: t("solution_title_observability"),
+    titleTr: t("solution_subTitle_observability"),
     description: t("solution_description_observability"),
     detailedDescription: t("solution_detailed_description_observability"),
     icon: <EyeIcon className="size-10 text-primary" />,
@@ -121,7 +121,7 @@ export const getDetailedSolutionData = (t: TFunction): DetailedSolution[] => [
       tr: "varlik-yonetimi"
     },
     title: t("solution_title_asset_management"),
-    titleTr: t("solution_title_asset_management"),
+    titleTr: t("solution_subTitle_asset_management"),
     description: t("solution_description_asset_management"),
     detailedDescription: t("solution_detailed_description_asset_management"),
     icon: <SearchIcon className="size-10 text-primary" />,
@@ -268,7 +268,7 @@ export const getDetailedSolutionData = (t: TFunction): DetailedSolution[] => [
       tr: "otomasyon"
     },
     title: t("solution_title_automation"),
-    titleTr: t("solution_title_automation"),
+    titleTr: t("solution_subTitle_automation"),
     description: t("solution_description_automation"),
     detailedDescription: t("solution_detailed_description_automation"),
     icon: <SettingsIcon className="size-10 text-primary" />,
@@ -391,7 +391,7 @@ export const getDetailedSolutionData = (t: TFunction): DetailedSolution[] => [
       tr: "guvenlik"
     },
     title: t("solution_title_security"),
-    titleTr: t("solution_title_security"),
+    titleTr: t("solution_subTitle_security"),
     description: t("solution_description_security"),
     detailedDescription: t("solution_detailed_description_security"),
     icon: <ShieldCheckIcon className="size-10 text-primary" />,
@@ -514,7 +514,7 @@ export const getDetailedSolutionData = (t: TFunction): DetailedSolution[] => [
       tr: "finops"
     },
     title: t("solution_title_finops"),
-    titleTr: t("solution_title_finops"),
+    titleTr: t("solution_subTitle_finops"),
     description: t("solution_description_finops"),
     detailedDescription: t("solution_detailed_description_finops"),
     icon: <DollarSignIcon className="size-10 text-primary" />,

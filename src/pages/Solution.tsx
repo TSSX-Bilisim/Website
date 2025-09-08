@@ -8,9 +8,9 @@ import {
   SolutionHero,
   SolutionOverview,
   SolutionServices,
-  SolutionUseCases,
   SolutionScreenshots,
   SolutionSuccessStories,
+  SolutionTabs,
 } from "@/components/Solution";
 import { useTranslation } from "react-i18next";
 import { ContactBanner } from "@/components/Shared";
@@ -78,12 +78,22 @@ const Solution = () => {
         <link rel="canonical" href={`https://tssx.com/solutions/${solution.slug[lang]}`} />
       </Helmet>
 
-      <main>
+      <main className="app-content">
         <SolutionHero solution={solution} />
+        <SolutionTabs
+          onNavigate={(id) => {
+            const el = document.getElementById(id);
+            if (!el) return;
+            const header = document.querySelector('.app-header');
+            const tabs = document.getElementById('solution-tabs');
+            const offset = (header ? header.getBoundingClientRect().height : 0) + (tabs ? tabs.getBoundingClientRect().height : 0) + 8;
+            const y = el.getBoundingClientRect().top + window.scrollY - offset;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+          }}
+        />
         <div ref={contentRef} className="bg-gradient-to-b from-white via-neutral-50 to-white">
           <SolutionOverview solution={solution} />
           <SolutionServices solution={solution} />
-          <SolutionUseCases solution={solution} />
           <SolutionScreenshots solution={solution} />
           <SolutionSuccessStories solution={solution} />
           <ContactBanner />

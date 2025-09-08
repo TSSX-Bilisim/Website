@@ -12,7 +12,7 @@ const SolutionSuccessStories = ({ solution }: SolutionSuccessStoriesProps) => {
   const { t } = useTranslation();
 
   return (
-    <section className="py-20 bg-gradient-to-r from-amber-50/30 via-white to-amber-50/30 animate-section">
+  <section id="success-stories" className="py-20 bg-gradient-to-r from-amber-50/30 via-white to-amber-50/30 animate-section">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">

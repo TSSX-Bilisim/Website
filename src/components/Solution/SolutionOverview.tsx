@@ -52,16 +52,6 @@ const SolutionOverview = ({ solution }: SolutionOverviewProps) => {
               </div>
             ))}
           </div>
-
-          {/* Bottom CTA */}
-          <div className="text-center mt-12">
-            <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 rounded-full px-6 py-3">
-              <div className="w-2 h-2 bg-amber-500 rounded-full animate-pulse"></div>
-              <span className="text-amber-700 font-medium text-sm">
-                {t("solution_cta_transform")}
-              </span>
-            </div>
-          </div>
         </div>
       </div>
     </section>

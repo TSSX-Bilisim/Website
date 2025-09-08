@@ -3,7 +3,6 @@ import { Settings } from "lucide-react";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import DecorativeBackground from "@/components/ui/DecorativeBackground";
-import AnimatedText from "@/components/ui/AnimatedText";
 import { SectionLabel } from "@/components/Shared";
 import type { DetailedSolution } from "@/types/solution";
 import { useTranslation } from 'react-i18next';
@@ -52,15 +51,10 @@ const SolutionHero = ({ solution }: SolutionHeroProps) => {
           <SectionLabel icon={<Settings className="size-4" />}>{t('nav_solutions')}</SectionLabel>
           <div className="vertical-stack gap-element items-center">
             <h1 className="title-hero text-center mb-element break-keep">
-              <AnimatedText text={solution.title} />
-              {solution.titleTr && (
-                <div className="text-xl text-amber-400 mt-2">
-                  {solution.titleTr}
-                </div>
-              )}
+              {solution.title}
             </h1>
             <p className="text-body text-center w-2/3 md:w-full text-white/80 break-keep">
-              {solution.detailedDescription}
+              {solution.titleTr}
             </p>
             <div className="text-center lg:text-left">
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
