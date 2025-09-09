@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import type { CaseStudyProps } from "@/types/about";
@@ -18,7 +18,6 @@ const SuccessCard = ({
   subtitle,
   description,
   image,
-  icon,
   points,
 }: CaseStudyProps) => {
   const cardRef = useRef<HTMLDivElement>(null);
@@ -73,21 +72,11 @@ const SuccessCard = ({
   return (
     <Card
       ref={cardRef}
-      className="content-box"
+      className="content-box px-4"
     >
       <CardHeader>
         <div className="flex items-center gap-3 mb-4">
           {/* Icon Display */}
-          {icon && (
-            <div className="size-12 bg-amber-100 text-amber-700 rounded-full flex items-center justify-center flex-shrink-0">
-              {React.isValidElement(icon)
-                ? React.cloneElement(
-                    icon as React.ReactElement<{ className?: string }>,
-                    { className: "size-6" }
-                  )
-                : icon}
-            </div>
-          )}
           <div className="flex-grow">
             <div className="text-amber-700 font-medium text-sm mb-1">
               {title}

@@ -1,6 +1,4 @@
 import { CheckCircle } from "lucide-react";
-import SpecialText from "@/components/ui/SpecialText";
-import AnimatedText from "@/components/ui/AnimatedText";
 import type { DetailedSolution } from "@/types/solution";
 import { useTranslation } from "react-i18next";
 
@@ -14,29 +12,20 @@ const SolutionOverview = ({ solution }: SolutionOverviewProps) => {
   const topBenefits = solution.benefits.slice(0, 6);
 
   return (
-    <section id="overview" className="py-16 animate-section">
-      <div className="container mx-auto px-4">
-        <div className="max-w-5xl mx-auto">
+    <section id="overview" className="animate-section">
+      <div className="section-content">
+        <div className="vertical-stack">
           {/* Header */}
-          <div className="text-center mb-12">
-            <SpecialText
-              id="overview-title"
-              className="text-3xl font-bold mb-4 text-neutral-900"
-            >
-              <AnimatedText text={t("solution_overview_why_choose")} />
-            </SpecialText>
-            <div className="w-16 h-1 bg-amber-500 mx-auto mb-6 rounded-full"></div>
-            <p className="text-lg text-neutral-600 max-w-2xl mx-auto leading-relaxed">
-              {solution.detailedDescription}
-            </p>
-          </div>
-
+          <h2 className="title-section md:text-center">{t("solution_overview_why_choose")}</h2>
+          <p className="text-body">
+            {solution.detailedDescription}
+          </p>
           {/* Benefits Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {topBenefits.map((benefit, index) => (
               <div
                 key={index}
-                className="group relative bg-gradient-to-br from-white to-neutral-50 border border-neutral-200 rounded-xl p-6 hover:shadow-lg hover:scale-105 transition-all duration-300"
+                className="group relative bg-gradient-to-br from-white to-neutral-50 border border-neutral-200 rounded-xl p-6 hover:shadow-lg hover:scale-105 transition-all duration-300 horizontal-stack"
               >
                 {/* Icon */}
                 <div className="flex items-center gap-3 mb-3">

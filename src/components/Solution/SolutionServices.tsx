@@ -2,8 +2,6 @@ import {
   Zap
 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import SpecialText from "@/components/ui/SpecialText";
-import AnimatedText from "@/components/ui/AnimatedText";
 import type { DetailedSolution } from "@/types/solution";
 
 interface SolutionServicesProps {
@@ -14,23 +12,15 @@ const SolutionServices = ({ solution }: SolutionServicesProps) => {
   const { t } = useTranslation();
 
   return (
-    <section id="services" className="py-16 bg-neutral-50 animate-section">
-      <div className="container mx-auto px-4">
-        <div className="max-w-5xl mx-auto">
+    <section id="services" className="bg-neutral-50 animate-section">
+      <div className="section-content">
+        <div className='vertical-stack'>
           {/* Header */}
-          <div className="text-center mb-12">
-            <SpecialText
-              id="services-title"
-              className="text-3xl font-bold mb-4 text-neutral-900"
-            >
-              <AnimatedText text={t('our_services')} />
-            </SpecialText>
-            <div className="w-16 h-1 bg-amber-500 mx-auto mb-6 rounded-full"></div>
-            <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-              {t('comprehensive_services_description', { solutionTitle: solution.title.toLowerCase() })}
-            </p>
-          </div>
-
+          <h2 className="title-section md:text-center">{t('our_services')}</h2>
+          <p className="text-body md:text-center">
+            {t('comprehensive_services_description', { solutionTitle: solution.title })}
+            {solution.title.toLowerCase()}
+          </p>
           {/* Services Grid */}
           <div className="grid md:grid-cols-2 gap-4">
             {solution.services.map((service, index) => (
@@ -58,7 +48,6 @@ const SolutionServices = ({ solution }: SolutionServicesProps) => {
               </div>
             ))}
           </div>
-
           {/* Bottom Stats */}
           <div className="mt-12 grid grid-cols-3 gap-6 text-center">
             <div className="group">

@@ -154,7 +154,7 @@
   "meta_references_description": "See why leading organizations trust us. Explore our global client references and success stories in IT infrastructure and digital transformation.",
   "meta_partners_description": "Discover our trusted technology partners. We collaborate with industry leaders like BMC, GitLab, HashiCorp, and more to deliver innovative IT solutions and exceptional value to our clients.",
   "solution_cta_transform": "Ready to transform your operations?",
-  "solution_screenshots_description": "See our {solutionTitle} solutions in action with real product interfaces and dashboards",
+  "solution_screenshots_description": "See our {{solutionTitle}} solutions in action with real product interfaces and dashboards",
   "solution_details_overview": "Overview",
   "solution_details_features": "Features",
   "solution_details_benefits": "Benefits",

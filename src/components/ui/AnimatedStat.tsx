@@ -115,17 +115,21 @@ const AnimatedStat = ({ icon, value, label, className }: AnimatedStatProps) => {
       ref={cardRef}
       className={`bg-white shadow-lg rounded-xl p-6 border border-neutral-200 cursor-pointer ${className}`}
     >
-      <div className="flex items-center mb-4">
-        <div 
-          ref={iconRef}
-          className="w-10 h-10 bg-amber-100 text-amber-700 rounded-full flex items-center justify-center mr-3"
-        >
-          {icon}
+      <div className="flex flex-col"> 
+        <div className="flex flex-row gap-4">
+          <div 
+            ref={iconRef}
+            className="w-10 h-10 bg-amber-100 text-amber-700 rounded-full flex items-center justify-center"
+          >
+            {icon}
+          </div>
+          <div className="flex flex-col gap-2">
+            <h3 ref={labelRef} className="text-body font-semibold text-neutral-900">{label}</h3>
+            <div ref={valueRef} className="title-sub font-bold text-amber-700 ">
+              <StatCounter value={value} enableScrollSpy={true} />
+            </div>
+          </div>
         </div>
-        <h3 ref={labelRef} className="text-xl font-bold text-neutral-900">{label}</h3>
-      </div>
-      <div ref={valueRef} className="text-3xl font-bold text-amber-700 mb-1">
-        <StatCounter value={value} enableScrollSpy={true} />
       </div>
     </div>
   );

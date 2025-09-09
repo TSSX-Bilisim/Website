@@ -47,7 +47,7 @@ const SolutionHero = ({ solution }: SolutionHeroProps) => {
       <div ref={heroRef} className="section-content">
 
         {/* Header Section - vertical stack layout */}
-        <div className="vertical-stack mx-auto items-center gap-block max-w-xs md:max-w-xl xl:max-w-5xl">
+        <div className="vertical-stack items-center gap-block xl:max-w-5xl mx-auto">
           <SectionLabel icon={<Settings className="size-4" />}>{t('nav_solutions')}</SectionLabel>
           <div className="vertical-stack gap-element items-center">
             <h1 className="title-hero text-center mb-element break-keep">

@@ -1,7 +1,5 @@
 import { useState } from "react";
 import { X, ChevronLeft, ChevronRight, Maximize2 } from "lucide-react";
-import SpecialText from "@/components/ui/SpecialText";
-import AnimatedText from "@/components/ui/AnimatedText";
 import PlaceholderImage from "@/components/ui/PlaceholderImage";
 import type { DetailedSolution } from "@/types/solution";
 import { useTranslation } from "react-i18next";
@@ -11,7 +9,7 @@ interface SolutionScreenshotsProps {
 }
 
 const SolutionScreenshots = ({ solution }: SolutionScreenshotsProps) => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
   const [imageErrors, setImageErrors] = useState<Set<number>>(new Set());
 
@@ -53,24 +51,11 @@ const SolutionScreenshots = ({ solution }: SolutionScreenshotsProps) => {
 
   return (
     <>
-  <section id="screenshots" className="py-20 animate-section bg-neutral-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <SpecialText
-                id="screenshots-title"
-                className="text-3xl font-bold mb-6 text-neutral-900"
-              >
-                <AnimatedText text={t("solution_screenshots_title")} />
-              </SpecialText>
-              <div className="w-24 h-1 bg-amber-500 mx-auto mb-6 rounded-full"></div>
-              <p className="text-lg text-neutral-700 max-w-3xl mx-auto">
-                {t("solution_screenshots_description", { 
-                  solutionTitle: i18n.language === 'tr' ? solution.titleTr : solution.title 
-                })}
-              </p>
-            </div>
-
+  <section id="screenshots" className="animate-section bg-neutral-50">
+        <div className="section-content">
+          <div className="vertical-stack">
+            <h2 className="title-section md:text-center">{t("solution_screenshots_title")}</h2>
+            <p className="text-body md:text-center">{t("solution_screenshots_description", { solutionTitle: solution.title })}</p>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {solution.screenshots.map((screenshot, index) => (
                 <div
