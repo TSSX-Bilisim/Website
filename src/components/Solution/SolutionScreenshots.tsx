@@ -64,8 +64,17 @@ const SolutionScreenshots = ({ solution }: SolutionScreenshotsProps) => {
                   onClick={() => openLightbox(index)}
                 >
                   {/* Image */}
-                  <div className="relative aspect-video overflow-hidden">
-                    <PlaceholderImage />
+                  <div className="relative aspect-video overflow-hidden bg-gray-100 p-4">
+                    {imageErrors.has(index) ? (
+                      <PlaceholderImage />
+                    ) : (
+                      <img
+                        src={screenshot.url}
+                        alt={screenshot.title}
+                        className="w-full h-full object-contain rounded-md"
+                        onError={() => handleImageError(index)}
+                      />
+                    )}
                     <Maximize2 className="absolute top-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 h-6 w-6" />
                   </div>
 
