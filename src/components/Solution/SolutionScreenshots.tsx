@@ -105,38 +105,40 @@ const SolutionScreenshots = ({ solution }: SolutionScreenshotsProps) => {
             <X className="h-8 w-8" />
           </button>
 
-          {/* Navigation Buttons */}
+          {/* Navigation Buttons (desktop overlay) */}
           <button
             onClick={() => navigateImage("prev")}
-            className="absolute left-6 top-1/2 -translate-y-1/2 text-white hover:text-amber-400 transition-colors z-[1111]"
+            className="hidden md:flex md:absolute md:left-6 md:top-1/2 md:-translate-y-1/2 text-white hover:text-amber-400 transition-colors z-[1111]"
           >
             <ChevronLeft className="h-12 w-12" />
           </button>
 
           <button
             onClick={() => navigateImage("next")}
-            className="absolute right-6 top-1/2 -translate-y-1/2 text-white hover:text-amber-400 transition-colors z-[1111]"
+            className="hidden md:flex md:absolute md:right-6 md:top-1/2 md:-translate-y-1/2 text-white hover:text-amber-400 transition-colors z-[1111]"
           >
             <ChevronRight className="h-12 w-12" />
           </button>
 
-          {/* Image Container */}
-          <div className="max-w-5xl max-h-[80vh] w-full">
-            {imageErrors.has(selectedImage) ? (
-              <div className="bg-white rounded-lg p-8">
-                <PlaceholderImage />
-              </div>
-            ) : (
-              <img
-                src={solution.screenshots[selectedImage].url}
-                alt={solution.screenshots[selectedImage].title}
-                className="w-full h-full object-contain rounded-lg"
-                onError={() => handleImageError(selectedImage)}
-              />
-            )}
+          {/* Image Container: column layout so image fills remaining height and text sits below */}
+          <div className="max-w-5xl w-full max-h-[90vh] flex flex-col py-6 gap-8">
+            <div className="flex-1 flex items-center justify-center min-h-0">
+              {imageErrors.has(selectedImage) ? (
+                <div className="bg-white rounded-lg p-8 w-full">
+                  <PlaceholderImage />
+                </div>
+              ) : (
+                <img
+                  src={solution.screenshots[selectedImage].url}
+                  alt={solution.screenshots[selectedImage].title}
+                  className="w-full h-full max-h-full object-contain rounded-lg"
+                  onError={() => handleImageError(selectedImage)}
+                />
+              )}
+            </div>
 
-            {/* Image Info */}
-            <div className="mt-6 text-center">
+            {/* Image Info below the image */}
+            <div className="text-center px-4">
               <h3 className="text-xl font-semibold text-white mb-2">
                 {solution.screenshots[selectedImage].title}
               </h3>
@@ -147,10 +149,32 @@ const SolutionScreenshots = ({ solution }: SolutionScreenshotsProps) => {
                 {selectedImage + 1} of {solution.screenshots.length}
               </p>
             </div>
+
+            {/* Mobile navigation buttons (below image) */}
+            <div className="mt-4 w-full flex items-center justify-center gap-4 md:hidden">
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  navigateImage("prev");
+                }}
+                className="px-4 py-2 bg-white text-neutral-900 rounded-md shadow-md"
+              >
+                {t("prev") || "Prev"}
+              </button>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  navigateImage("next");
+                }}
+                className="px-4 py-2 bg-white text-neutral-900 rounded-md shadow-md"
+              >
+                {t("next") || "Next"}
+              </button>
+            </div>
           </div>
 
           {/* Click outside to close */}
-          <div className="absolute inset-0 z-[1105]" onClick={closeLightbox} />
+          <div className="absolute inset-0 -z-10" onClick={closeLightbox} />
         </div>
       )}
     </>
