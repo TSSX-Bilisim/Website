@@ -96,11 +96,11 @@ const SolutionScreenshots = ({ solution }: SolutionScreenshotsProps) => {
 
       {/* Lightbox Modal */}
       {selectedImage !== null && (
-        <div className="fixed inset-0 z-50 bg-black bg-opacity-90 flex items-center justify-center p-4">
+          <div className="fixed inset-0 z-[1100] bg-black bg-opacity-90 flex items-center justify-center p-4">
           {/* Close Button */}
           <button
             onClick={closeLightbox}
-            className="absolute top-6 right-6 text-white hover:text-amber-400 transition-colors z-10"
+            className="absolute top-6 right-6 text-white hover:text-amber-400 transition-colors z-[1111]"
           >
             <X className="h-8 w-8" />
           </button>
@@ -108,14 +108,14 @@ const SolutionScreenshots = ({ solution }: SolutionScreenshotsProps) => {
           {/* Navigation Buttons */}
           <button
             onClick={() => navigateImage("prev")}
-            className="absolute left-6 top-1/2 -translate-y-1/2 text-white hover:text-amber-400 transition-colors z-10"
+            className="absolute left-6 top-1/2 -translate-y-1/2 text-white hover:text-amber-400 transition-colors z-[1111]"
           >
             <ChevronLeft className="h-12 w-12" />
           </button>
 
           <button
             onClick={() => navigateImage("next")}
-            className="absolute right-6 top-1/2 -translate-y-1/2 text-white hover:text-amber-400 transition-colors z-10"
+            className="absolute right-6 top-1/2 -translate-y-1/2 text-white hover:text-amber-400 transition-colors z-[1111]"
           >
             <ChevronRight className="h-12 w-12" />
           </button>
@@ -150,7 +150,7 @@ const SolutionScreenshots = ({ solution }: SolutionScreenshotsProps) => {
           </div>
 
           {/* Click outside to close */}
-          <div className="absolute inset-0 -z-10" onClick={closeLightbox} />
+          <div className="absolute inset-0 z-[1105]" onClick={closeLightbox} />
         </div>
       )}
     </>
