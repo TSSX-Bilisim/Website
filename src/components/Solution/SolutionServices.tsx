@@ -19,7 +19,6 @@ const SolutionServices = ({ solution }: SolutionServicesProps) => {
           <h2 className="title-section md:text-center">{t('our_services')}</h2>
           <p className="text-body md:text-center">
             {t('comprehensive_services_description', { solutionTitle: solution.title })}
-            {solution.title.toLowerCase()}
           </p>
           {/* Services Grid */}
           <div className="grid md:grid-cols-2 gap-4">
