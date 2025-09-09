@@ -215,6 +215,8 @@
   "observability_screenshot_1_description": "Comprehensive dashboard displaying every CI discovered in the environment—servers, VMs, software instances, databases, network devices, and storage.",
   "observability_screenshot_2_title": "TSSA Architecture",
   "observability_screenshot_2_description": "Automatically generated service maps showing how servers, databases, and network elements are related within business services.",
+  "observability_screenshot_3_title": "Zabbix Dashboard",
+  "observability_screenshot_3_description": "Centralized and personalized dashboard for managing all automation tasks, deployments, and system health monitoring.",
   "asset_management_service_cmdb": "Configuration Management Database (CMDB)",
   "asset_management_service_license_optimization": "Software License Optimization",
   "asset_management_service_cloud_discovery": "Cloud Asset Discovery",

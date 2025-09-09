@@ -230,6 +230,8 @@
   "observability_screenshot_1_description": "Ortamda keşfedilen her bir CI'yı (sunucular, VM'ler, yazılım örnekleri, veritabanları, ağ cihazları ve depolama) gösteren kapsamlı pano.",
   "observability_screenshot_2_title": "TSSA Mimarisi",
   "observability_screenshot_2_description": "Sunucuların, veritabanlarının, ağ öğelerinin iş hizmetleri içinde nasıl ilişkili olduğunu gösteren otomatik olarak oluşturulmuş hizmet haritaları.",
+  "observability_screenshot_3_title": "Zabbix Dashboard",
+  "observability_screenshot_3_description": "Tüm görevlerin ve sistem durumunun izlenebildiği, dağıtım süreçlerinin yönetilebildiği entegre bir kişiselleştirilebilir kontrol paneli",
   "asset_management_service_cmdb": "Yapılandırma Yönetimi Veritabanı (CMDB)",
   "asset_management_service_license_optimization": "Yazılım Lisans Optimizasyonu",
   "asset_management_service_cloud_discovery": "Bulut Varlık Keşfi",
